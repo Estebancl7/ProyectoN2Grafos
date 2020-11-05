@@ -14,9 +14,6 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
     letter-spacing: .03rem;
-    /*background-color: var(--white) !important;*/
-    /*background-color: #0d0e0e !important;
-    opacity: 90%;*/
     margin: 0;
     margin-bottom: 0;
 }
@@ -278,4 +275,14 @@ span:hover {
 ion-icon {
     color: #CDA434 !important;
     border-color: #CDA434 !important;
+}
+
+.divider {
+    border-bottom: 2px solid black;
+}
+
+.divider1 {
+    border-bottom: 2px solid black;
+    margin-left: 20% !important;
+    margin-right: 20% !important;
 }

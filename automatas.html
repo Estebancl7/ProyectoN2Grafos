@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTFd-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+    <!--Conexion Css -->
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/automatas.css">
+    <!--Font awesome-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.css">
+    
+    <link rel="icon" href="img/Grafos.png">
+    <title>Autómatas</title>
+    
+</head>
+
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark sticky-top p-3 aria-label">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" style="color: #CDA434;">Grafos y Lenguajes Formales</a>
+            <button class="navbar-toggler border-white" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <ion-icon name="menu-outline"></ion-icon>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item px-2">
+                        <a class="nav-link" href="index.html" style="text-align: center;">Inicio </a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link" href="nosotros.html" style="text-align: center;">Nosotros </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="border border-dark shadow rounded my-5 pb-5">
+            <h1 class="text-center">Ingresa los tipos de Autómata</h1>
+            <h1 class="divider1"></h1>
+            <div class="row pt-3 justify-content-center">
+                <div class="col-md-6 mx-5">
+                    <p><strong>1.</strong> Elige el tipo de autómata que ingresaras:</p>
+                    <select class="form-control mb-3" id="tipoGrafo">
+                        <option value="AFD">2 AFD</option>
+                        <option value="AFND">2 AFND</option>
+                        <option value="AFD/AFND">1 AFD y 1 AFND</option>
+                    </select>
+                    <p><strong>2.</strong> Ahora indica el N° de estados de los autómatas</p>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <div class="form-group">
+                                    <input class="form-control" type="number" id="Automata1" placeholder="Ingrese N° de estados para el autómata N°1" required>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="form-group" >
+                                    <input class="form-control" type="number" id="Automata2" placeholder="Ingrese N° de estados para el autómata N°2" required>     
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <a onclick="addFormulario()" id="addFormulario()" class="btn btn-outline-light px-2 mb-3" style="text-align: center; max-width: 850px;">Aceptar e Ingresar </a>
+            </div>
+            <div class="row justify-content-center mx-5">
+                <div class="mx-4" id="formulario">
+                
+                </div>
+                <div class="mx-4" id="formulario2"></div>
+            </div>
+                        
+                    
+                    
+
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+<script src="js/tablaDinamica.js"></script>
