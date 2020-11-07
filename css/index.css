@@ -286,3 +286,17 @@ ion-icon {
     margin-left: 20% !important;
     margin-right: 20% !important;
 }
+
+input:invalid {
+    border: 2px dashed #CDA434;
+    color: black !important;
+}
+
+
+/*input:invalid:required {
+    background-image: linear-gradient(to right, #cda434b0, rgba(116, 111, 70, 0.719));
+}*
+
+input:valid {
+    border: 2px solid black;
+}
