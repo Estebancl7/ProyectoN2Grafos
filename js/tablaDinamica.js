@@ -9,7 +9,7 @@
         count1 = 1;
         const texto1 = document.querySelector("#formulario");
         texto1.textContent = "Nombres para el autómata 1";
-        texto1.className = "alert alert-warning pb-5";
+        texto1.className = "alert alert-warning py-4";
         while (a <= numero) {
             var div = document.createElement('div');
             div.setAttribute('class', 'form-inline');
@@ -25,7 +25,7 @@
 
         const texto2 = document.querySelector("#formulario2");
         texto2.textContent = "Nombres para el autómata 2";
-        texto2.className = "alert alert-warning pb-5";
+        texto2.className = "alert alert-warning py-4";
 
         count2 = 1;
 
@@ -40,6 +40,25 @@
             b++;
             count2++;
         }
+
+        const texto3 = document.querySelector("#mostrarLenguaje");
+        texto3.textContent = "Ingrese las variables del lenguaje";
+        texto3.className = "alert alert-warning py-3";
+        var leEntrada = document.getElementById("nEntradas").value;
+        console.log(leEntrada);
+        var count = 1;
+        var x = leEntrada;
+        let k = 1;
+        while (k <= x) {
+            var div = document.createElement('div');
+            div.setAttribute('class', 'form-inline');
+            div.innerHTML = '<div style="clear:both" class=" "' + x + ' col-md-offset-1 col-md-6"><input id="lenENvalor' + count +
+                '" class="form-control" style="margin-bottom: 5px;"  placeholder="letra de entrada ' + [k] + ' " ' + x + '" type="text"/>';
+            document.getElementById('mostrarLenguaje').appendChild(div);
+            k++;
+            count++;
+        }
+
 
         var div = document.createElement('div');
         div.setAttribute('class', 'form-inline', 'a', 'style');
@@ -57,12 +76,16 @@
         var aux2 = [];
         var arrayEntradas = [];
         var arraySalidas = [];
+        var arrayConjunto1 = [];
+        var arrayConjunto2 = [];
         var arrayEntradas2 = [];
         var arraySalidas2 = [];
         var count1 = 1;
         var count2 = 1;
+        var count3 = 1;
         let numero2 = document.getElementById("Automata2").value;
         let numero = document.getElementById("Automata1").value;
+        let numero3 = document.getElementById("lenENvalor").value;
 
 
 
@@ -72,13 +95,15 @@
             var f = document.getElementById("A1final" + count1).checked;
             if (p == true && f == false) {
                 arrayEntradas.push(automata1);
+                arrayConjunto1.push(automata1);
                 console.log("arrayEntrada1: ", arrayEntradas);
             } else {
                 if (p == false && f == true) {
                     arraySalidas.push(automata1);
+                    arrayConjunto1.push(automata1);
                     console.log("arraySalida1: ", arraySalidas);
                 } else {
-
+                    arrayConjunto1.push(automata1);
                 }
             }
             aux.push(automata1);
@@ -93,13 +118,15 @@
             var f2 = document.getElementById("A2final" + count2).checked;
             if (p2 == true && f2 == false) {
                 arrayEntradas2.push(automata2);
+                arrayConjunto2.push(automata2);
                 console.log("arrayentrada2: ", arrayEntradas2);
             } else {
                 if (p2 == false && f2 == true) {
                     arraySalidas2.push(automata2);
+                    arrayConjunto2.push(automata2);
                     console.log("arraysalida2: ", arraySalidas2);
                 } else {
-
+                    arrayConjunto2.push(automata2);
                 }
             }
             aux2.push(automata2);
@@ -109,3 +136,27 @@
         console.log(aux2);
 
     }
+
+
+    function agregarLEN() {
+        var leEntrada = document.getElementById("nEntradas").value;
+        console.log(leEntrada);
+        var count = 1;
+        var x = leEntrada;
+        let b = 1;
+        while (b <= x) {
+            var div = document.createElement('div');
+            div.setAttribute('class', 'form-inline');
+            div.innerHTML = '<div style="clear:both" class=" "' + x + ' col-md-offset-1 col-md-6"><input id="lenENvalor' + count +
+                '" class="form-control" style="margin-bottom: 5px;"  placeholder="letra de entrada ' + [b] + ' " ' + x + '" type="text"/>';
+            document.getElementById('mostrarLenguaje').appendChild(div);
+            b++;
+            count++;
+        }
+
+    }
+
+    // function confirmar() {
+    //     llenar();
+    //     agregarLEN();
+    // }

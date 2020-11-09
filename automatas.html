@@ -52,9 +52,9 @@
                 <div class="col-md-6 mx-5">
                     <p><strong>1.</strong> Elige el tipo de autómata que ingresaras:</p>
                     <select class="form-control mb-3" id="tipoGrafo">
-                        <option value="AFD">2 AFD</option>
-                        <option value="AFND">2 AFND</option>
-                        <option value="AFD/AFND">1 AFD y 1 AFND</option>
+                        <option id="AFD" value="AFD">2 AFD</option>
+                        <option id="AFND" value="AFND">2 AFND</option>
+                        <option id="AFD/AFND" value="AFD/AFND">1 AFD y 1 AFND</option>
                     </select>
                     <p><strong>2.</strong> Ahora indica el N° de estados de los autómatas</p>
                     <div class="col-md-12">
@@ -72,6 +72,25 @@
                         </div>
                         
                     </div>
+                    <p><strong>3.</strong> Ahora indica el alfabeto de entrada, elige cuantas variables tendra este: <i><strong>Si quieres ingresar x, y, digita 2</strong> </i></p>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <div class="form-group">
+                                    <input class="form-control" type="number" id="nEntradas" placeholder="Ingresa N° de variables del lenguaje" required>
+                                </div>
+
+                                <div>
+                                <!--<a onclick="agregarLEN()"class="btn btn-outline-light px-2 mb-3" style="text-align: center; max-width: 850px;">Aceptar lenguaje </a>-->
+                                </div>
+
+                                
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
 
                 </div>
             </div>
@@ -86,11 +105,11 @@
                     
                     </div>
                     <div class="mx-4" id="formulario2"></div>
+
+                    <div class="mx-4" id="mostrarLenguaje"></div>
                    
                 </div>
-                <div class="mt-4 align-content-center" id="confirmar"></div>
-
-                
+                <div class="mt-4 align-content-center" id="confirmar"></div>                
             </div>
                    
                     
