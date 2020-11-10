@@ -64,7 +64,7 @@
             var div = document.createElement('div');
             div.setAttribute('class', 'form-inline');
             div.innerHTML = '<div style="clear:both" class=" "' + k + ' col-md-offset-1 col-md-6"><input id="lenENvalor' + count +
-                '" class="form-control" style="margin-bottom: 5px;"  placeholder="letra de entrada ' + [k] + ' " ' + k + '" type="text"/>';
+                '" class="form-control" style="margin-bottom: 2px;"  placeholder="letra de entrada ' + [k] + ' " ' + k + '" type="text"/>';
             document.getElementById('mostrarLenguaje').appendChild(div);
             k++;
             count++;
@@ -166,6 +166,7 @@
 
 
     var transiciones = ['Entrada', 'Lectura', 'Destino'];
+
     //Variables para tabla de transicion1
     const tablaTransicion1 = document.querySelector("#tablaTransicion1");
     //Variables para tabla de transicion2
@@ -175,10 +176,18 @@
     function TablaTransicion(arrayConjunto, arraylenguaje, tablaTransicion1) {
         var tablaPadre = document.createElement('table'),
             filaTitulo = document.createElement('tr');
+        tablaPadre.style.marginLeft = "50px";
+        tablaPadre.style.paddingBottom = "80px";
+        tablaPadre.style.paddingTop = "80px";
         for (let i = 0; i < transiciones.length; i++) {
             var colTitulo = document.createElement('td');
             colTitulo.className = 'formatoTablaTitulo';
             colTitulo.textContent = transiciones[i];
+            colTitulo.style.width = "100px";
+            colTitulo.style.height = "30px";
+            colTitulo.style.backgroundColor = "#CDA434";
+            colTitulo.style.textAlign = "center";
+
             filaTitulo.appendChild(colTitulo);
         }
         tablaPadre.appendChild(filaTitulo);
@@ -190,6 +199,12 @@
                     colInput = document.createElement('td'),
                     input = document.createElement('input');
                 //estilos y contenido a las columnas
+                filaDatos.style.width = "100px";
+                filaDatos.style.height = "30px";
+                filaDatos.style.backgroundColor = "#cda4345b";
+                filaDatos.style.textAlign = "center";
+                filaDatos.style.borderColor = "#1a1a1a";
+                filaDatos.style.marginBottom = "10px";
                 colEstados.className = 'formatoTabla';
                 colEstados.textContent = arrayConjunto[i];
                 collenguaje.className = 'formatoTabla';
