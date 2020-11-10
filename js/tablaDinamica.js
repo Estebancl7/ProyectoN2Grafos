@@ -78,12 +78,7 @@
             '</div>';
         document.getElementById('confirmar').appendChild(div);
 
-        // var div2 = document.createElement('div');
-        // div2.setAttribute('class', 'form-inline', 'a', 'style');
-        // div2.innerHTML = '<div class="row d-flex justify-content-center">' +
-        //     '<a onclick="llenarLEN()" class="btn btn-outline-light px-2 mb-3" style="text-align: center; max-width: 850px;">prueba</a>' +
-        //     '</div>';
-        // document.getElementById('confirmar').appendChild(div2);
+
     }
 
 
@@ -95,6 +90,7 @@
         var arrayConjunto2 = [];
         var arrayEntradas2 = [];
         var arraySalidas2 = [];
+        var arrayReturn = [];
         var count1 = 1;
         var count2 = 1;
         let numero2 = document.getElementById("Automata2").value;
@@ -138,6 +134,12 @@
         }
         console.log("Estos son los estados para el automata 2: ", arrayConjunto2);
 
+        arrayReturn.push(arrayConjunto1);
+        arrayReturn.push(arrayConjunto2);
+
+
+        return arrayReturn;
+
     }
 
     function llenarLEN() {
@@ -155,27 +157,69 @@
         }
         console.log("estos son los lenguajes: ", arraylenguaje);
 
+        return arraylenguaje;
+
 
     }
 
-    /*function tablaEstados() {
-        let titulos = ['INICIAL', 'FINAL', 'ESTADOS'];
-        var estados = ' 
-        <table> 
-            <tr>
-                <td>${titulos[0]}</td>
-                <td>${titulos[1]}</td>
-                <td>${titulos[2]}</td>
-            </tr>
-        </table>';
 
-    }*/
+
+
+    var transiciones = ['Entrada', 'Lectura', 'Destino'];
+    //Variables para tabla de transicion1
+    const tablaTransicion1 = document.querySelector("#tablaTransicion1");
+    //Variables para tabla de transicion2
+    const tablaTransicion2 = document.querySelector("#tablaTransicion2");
+
+    //Funcion llenar tabla
+    function TablaTransicion(arrayConjunto, arraylenguaje, tablaTransicion1) {
+        var tablaPadre = document.createElement('table'),
+            filaTitulo = document.createElement('tr');
+        for (let i = 0; i < transiciones.length; i++) {
+            var colTitulo = document.createElement('td');
+            colTitulo.className = 'formatoTablaTitulo';
+            colTitulo.textContent = transiciones[i];
+            filaTitulo.appendChild(colTitulo);
+        }
+        tablaPadre.appendChild(filaTitulo);
+        for (let i = 0; i < arrayConjunto.length; i++) {
+            for (let j = 0; j < arraylenguaje.length; j++) {
+                var filaDatos = document.createElement('tr'),
+                    colEstados = document.createElement('td'),
+                    collenguaje = document.createElement('td'),
+                    colInput = document.createElement('td'),
+                    input = document.createElement('input');
+                //estilos y contenido a las columnas
+                colEstados.className = 'formatoTabla';
+                colEstados.textContent = arrayConjunto[i];
+                collenguaje.className = 'formatoTabla';
+                collenguaje.textContent = arraylenguaje[j];
+                input.className = 'form-control';
+                input.setAttribute('placeholder', 'Estado Destino');
+                input.setAttribute('type', 'text');
+                input.id = `${arrayConjunto[i]}-${arraylenguaje[j]}`;
+                //agrego los elementos a sus nodos padres
+                colInput.appendChild(input);
+                filaDatos.appendChild(colEstados);
+                filaDatos.appendChild(collenguaje);
+                filaDatos.appendChild(colInput);
+                tablaPadre.appendChild(filaDatos);
+            }
+        }
+        tablaTransicion1.appendChild(tablaPadre);
+    }
 
     function confirmar() {
-        llenar();
-        llenarLEN();
+        var aux1 = llenar();
+        var aux = llenarLEN();
+        TablaTransicion(aux1[0], aux, tablaTransicion1);
         const TipoAuto = document.querySelector("#tipoAutomata").value;
-        console.log(TipoAuto);
+
+        TablaTransicion(aux1[1], aux, tablaTransicion2);
+        const TipoAuto2 = document.querySelector("#tipoAutomata").value;
+        console.log(TipoAuto2);
+
+
         if (TipoAuto === 'AFD') {
             console.log("Es AFD ");
             return true;
