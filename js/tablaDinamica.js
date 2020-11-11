@@ -134,8 +134,12 @@
         }
         console.log("Estos son los estados para el automata 2: ", arrayConjunto2);
 
-        arrayReturn.push(arrayConjunto1);
-        arrayReturn.push(arrayConjunto2);
+        arrayReturn.push(arrayConjunto1); //0
+        arrayReturn.push(arrayConjunto2); //1
+        arrayReturn.push(arrayEntradas); //2
+        arrayReturn.push(arraySalidas); //3
+        arrayReturn.push(arrayEntradas2); //4
+        arrayReturn.push(arraySalidas2); //5
 
 
         return arrayReturn;
@@ -165,6 +169,7 @@
 
 
 
+
     var transiciones = ['Entrada', 'Lectura', 'Destino'];
 
     //Variables para tabla de transicion1
@@ -174,9 +179,12 @@
 
     //Funcion llenar tabla
     function TablaTransicion(arrayConjunto, arraylenguaje, tablaTransicion1) {
+        var count4 = 0;
+        var arrayTra = [];
         var tablaPadre = document.createElement('table'),
             filaTitulo = document.createElement('tr');
         tablaPadre.style.marginLeft = "50px";
+        tablaPadre.style.marginRight = "50px";
         tablaPadre.style.paddingBottom = "80px";
         tablaPadre.style.paddingTop = "80px";
         for (let i = 0; i < transiciones.length; i++) {
@@ -196,9 +204,9 @@
                 var filaDatos = document.createElement('tr'),
                     colEstados = document.createElement('td'),
                     collenguaje = document.createElement('td'),
-                    colInput = document.createElement('td'),
-                    input = document.createElement('input');
-                //estilos y contenido a las columnas
+                    colInput = document.createElement('td');
+                input = document.createElement('input')
+                    //estilos y contenido a las columnas
                 filaDatos.style.width = "100px";
                 filaDatos.style.height = "30px";
                 filaDatos.style.backgroundColor = "#cda4345b";
@@ -209,10 +217,15 @@
                 colEstados.textContent = arrayConjunto[i];
                 collenguaje.className = 'formatoTabla';
                 collenguaje.textContent = arraylenguaje[j];
-                input.className = 'form-control';
+                input.className = 'forma-control';
                 input.setAttribute('placeholder', 'Estado Destino');
                 input.setAttribute('type', 'text');
                 input.id = `${arrayConjunto[i]}-${arraylenguaje[j]}`;
+                //input.id = `${"transicion"}-${arrayConjunto[i] + count4 }`;
+                //arrayTra.push(input.id);
+                count4++;
+
+
                 //agrego los elementos a sus nodos padres
                 colInput.appendChild(input);
                 filaDatos.appendChild(colEstados);
@@ -220,8 +233,28 @@
                 filaDatos.appendChild(colInput);
                 tablaPadre.appendChild(filaDatos);
             }
+
         }
         tablaTransicion1.appendChild(tablaPadre);
+        //console.log("este es el array", arrayTra);
+
+        // var div = document.createElement('div');
+        // div.setAttribute('class', 'form-inline', 'a', 'style');
+        // div.innerHTML = '<div class="row d-flex justify-content-center">' +
+        //     '<a onclick="llenarTransicion()" class="btn btn-outline-light px-2 mb-3" style="text-align: center; max-width: 850px;">Confirme los datos</a>' +
+        //     '</div>';
+        // document.getElementById('confirmar').appendChild(div);
+
+
+
+        // var arrayresultante = llenarTransicion(arrayConjunto, arraylenguaje);
+        //console.log(arrayresultante);
+
+        //return arrayresultante;
+
+
+
+
     }
 
     function confirmar() {
@@ -233,6 +266,12 @@
         TablaTransicion(aux1[1], aux, tablaTransicion2);
         const TipoAuto2 = document.querySelector("#tipoAutomata").value;
         console.log(TipoAuto2);
+
+        //llenarTransicion(aux[0], aux);
+
+
+
+
 
 
         if (TipoAuto === 'AFD') {
@@ -247,4 +286,92 @@
             return true;
 
         }
+    }
+
+
+    function llenarTransicion1() {
+        var aux = llenar()[0];
+        var len = llenarLEN();
+
+        var arrayTransiciones = [];
+        cont = 0;
+
+        for (let i = 0; i < aux.length; i++) {
+            for (let j = 0; j < len.length; j++) {
+                var t1 = document.getElementById(`${aux[i]}-${len[j]}`).value;
+                arrayTransiciones.push(t1);
+            }
+
+        }
+
+        console.log("las transiciones son", arrayTransiciones);
+
+
+        return arrayTransiciones;
+
+    }
+
+    function llenarTransicion2() {
+        var aux = llenar()[1];
+        var len = llenarLEN();
+
+        var arrayTransiciones = [];
+        cont = 0;
+
+        for (let i = 0; i < aux.length; i++) {
+            for (let j = 0; j < len.length; j++) {
+                var t1 = document.getElementById(`${aux[i]}-${len[j]}`).value;
+                arrayTransiciones.push(t1);
+            }
+
+        }
+
+        console.log("las transiciones son", arrayTransiciones);
+
+
+        return arrayTransiciones;
+
+    }
+
+
+    function primeraQuintupla() {
+        var conjunto1 = llenar()[0];
+        var entrada1 = llenar()[2];
+        var salida1 = llenar()[3];
+        var lenguaje = llenarLEN();
+        var Estados = ['Inicial', 'Final', 'Estados', 'Lenguaje'];
+        var tablaQuintupla = `
+        <table> 
+            <tr>
+                <td class ="">${Estados[0]}</td> 
+                <td class ="">${Estados[1]}</td>
+                <td class ="">${Estados[2]}</td>
+                <td class ="">${Estados[3]}</td>
+            </tr>
+            <tr>
+                <td>${entrada1}</td>
+                <td>${salida1}</td>
+                <td>${conjunto1}</td>            
+                <td>${lenguaje}</td>           
+            </tr>
+        </table>`;
+        const mostrar = document.querySelector("#quintupla");
+        mostrar.appendChild(tablaQuintupla);
+
+        /*var cuadro = document.createElement('div');
+        cuadro.setAttribute('class', 'form-inline');
+        cuadro.innerHTML = '<div style="clear:both" class=" ">' + ' "<h4>Conjunto Q de estados Automata N°1 </h4><h6>Q: ' +
+            +'< /h6><br><h4> Alfabeto de Entrada V: </h4> <h6>v: ' +
+            +' </h6></div>';
+        document.getElementById('mostrarLenguaje').appendChild(cuadro); */
+
+
+    }
+
+    function confirmarTRA() {
+        llenarTransicion1();
+        llenarTransicion2();
+        primeraQuintupla();
+        //const mostrar = document.querySelector("#quintupla");
+        //mostrar.appendChild(primeraQuintupla());
     }
