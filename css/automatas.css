@@ -10,3 +10,56 @@
 #boxs .col-6 {
     border-radius: 20px !important;
 }
+
+#Quintupla .col-md-6::before {
+    border-radius: 20px !important;
+}
+
+:root {
+    --warning: #f0cb526c;
+}
+
+#Quintupla .col-md-6 {
+    background-color: var(--warning);
+    padding-left: 4%;
+    border-color: transparent !important;
+    max-width: 500px!important;
+}
+
+#styless {
+    margin-left: 5% !important;
+    margin-right: 5% !important;
+}
+
+@media (max-width: 900px) {
+    #Quintupla .col-md-6 {
+        max-width: 300px!important;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    #Quintupla .col-md-6 {
+        max-width: 400px!important;
+    }
+    #styless {
+        margin-left: 10% !important;
+        margin-right: 5% !important;
+    }
+}
+
+@media (max-width: 575.98px) {
+    #Quintupla .col-md-6 {
+        max-width: 300px!important;
+    }
+}
+
+
+/*@media (max-width: 405px) {
+    #Quintupla .col-md-6 {
+        max-width: 300px!important;
+    }
+    #styless {
+        margin-left: 10% !important;
+        margin-right: 5% !important;
+    }
+}*/
