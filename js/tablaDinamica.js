@@ -1,5 +1,22 @@
     //Aca se guarda el tipo de automata ingresado
 
+    function identificaDatos() {
+        const TipoAuto = document.querySelector("#tipoAutomata").value;
+        const TipoAuto2 = document.querySelector("#tipoAutomata").value;
+        const TipoAutoDuo = document.querySelector("#tipoAutomata").value;
+        if (TipoAuto === 'AFD') {
+            console.log("Es AFD ");
+            return TipoAuto;
+        } else if (TipoAuto2 === 'AFND') {
+
+            console.log("Es AFND");
+            return TipoAuto2;
+        } else if (TipoAutoDuo == 'AFD/AFND') {
+            console.log("Es combinacion");
+            return TipoAutoDuo;
+        }
+    }
+
     //Formulario
     function addFormulario() {
         let a = 1;
@@ -13,62 +30,126 @@
         const texto1 = document.querySelector("#formulario");
         texto1.textContent = "Nombres para el autómata 1";
         texto1.className = "alert alert-warning py-4 mx-2";
-        while (a <= numero) {
+        var TipoDato = identificaDatos(); //La agregue
+        if (TipoDato === 'AFD') {
+            while (a <= numero) {
+                var div = document.createElement('div');
+                div.setAttribute('class', 'form-inline');
+                div.innerHTML = '<div style="clear:both" class=" "' + a + ' col-md-offset-1 col-md-6"><input id="a1valor' + count1 +
+                    '" class="form-control" style="margin-bottom: 5px;"  placeholder="Nombre del estado ' + [a] + ' "  ' + a + '" type="text"/> <input type="radio" id="A1inicial' + count1 + '" name="inicia" required>Inicial <input type="checkbox" id="A1final' + count1 + '" name="final" required> Final</div>';
+                document.getElementById('formulario').appendChild(div);
+                a++;
+                count1++;
+
+
+
+            }
+
+            const texto2 = document.querySelector("#formulario2");
+            texto2.textContent = "Nombres para el autómata 2";
+            texto2.className = "alert alert-warning py-4 mx-2";
+
+            count2 = 1;
+
+            let b = 1;
+            while (b <= numero2) {
+                var div = document.createElement('div');
+                div.setAttribute('class', 'form-inline');
+                div.innerHTML = '<div style="clear:both" class=" "' + b + ' col-md-offset-1 col-md-6"><input id="a2valor' + count2 +
+                    '" class="form-control" style="margin-bottom: 5px;"  placeholder="Nombre del estado ' + [b] + ' " ' + b + '" type="text"/> <input type="radio" id="A2inicial' + count2 +
+                    '" name="inicial" required>Inicial <input type="checkbox" id="A2final' + count2 + '" name="final" required> Final</div>';
+                document.getElementById('formulario2').appendChild(div);
+                b++;
+                count2++;
+            }
+
+            const texto3 = document.querySelector("#mostrarLenguaje");
+            texto3.textContent = "Ingrese las variables del lenguaje";
+            texto3.className = "alert alert-warning py-3";
+            var leEntrada = document.getElementById("nEntradas").value;
+            console.log(leEntrada);
+            var count = 1;
+            var x = leEntrada;
+            let k = 1;
+            while (k <= x) {
+                var div = document.createElement('div');
+                div.setAttribute('class', 'form-inline');
+                div.innerHTML = '<div style="clear:both" class=" "' + k + ' col-md-offset-1 col-md-6"><input id="lenENvalor' + count +
+                    '" class="form-control" style="margin-bottom: 2px;"  placeholder="letra de entrada ' + [k] + ' " ' + k + '" type="text"/>';
+                document.getElementById('mostrarLenguaje').appendChild(div);
+                k++;
+                count++;
+            }
+
+
             var div = document.createElement('div');
-            div.setAttribute('class', 'form-inline');
-            div.innerHTML = '<div style="clear:both" class=" "' + a + ' col-md-offset-1 col-md-6"><input id="a1valor' + count1 +
-                '" class="form-control" style="margin-bottom: 5px;"  placeholder="Nombre del estado ' + [a] + ' "  ' + a + '" type="text"/> <input type="radio" id="A1inicial' + count1 + '" name="inicia" required>Inicial <input type="checkbox" id="A1final' + count1 + '" name="final" required> Final</div>';
-            document.getElementById('formulario').appendChild(div);
-            a++;
-            count1++;
+            div.setAttribute('class', 'form-inline', 'a', 'style');
+            div.innerHTML = '<div class="row d-flex justify-content-center">' +
+                '<a onclick="confirmar()" class="btn btn-outline-light px-2 mb-3" style="text-align: center; max-width: 850px;">Confirme los datos</a>' +
+                '</div>';
+            document.getElementById('confirmar').appendChild(div);
 
+        } else if (TipoDato === 'AFND') {
 
+        } else if (TipoDato === 'AFD/AFND') {
 
         }
-
-        const texto2 = document.querySelector("#formulario2");
-        texto2.textContent = "Nombres para el autómata 2";
-        texto2.className = "alert alert-warning py-4 mx-2";
-
-        count2 = 1;
-
-        let b = 1;
-        while (b <= numero2) {
-            var div = document.createElement('div');
-            div.setAttribute('class', 'form-inline');
-            div.innerHTML = '<div style="clear:both" class=" "' + b + ' col-md-offset-1 col-md-6"><input id="a2valor' + count2 +
-                '" class="form-control" style="margin-bottom: 5px;"  placeholder="Nombre del estado ' + [b] + ' " ' + b + '" type="text"/> <input type="radio" id="A2inicial' + count2 +
-                '" name="inicial" required>Inicial <input type="checkbox" id="A2final' + count2 + '" name="final" required> Final</div>';
-            document.getElementById('formulario2').appendChild(div);
-            b++;
-            count2++;
-        }
-
-        const texto3 = document.querySelector("#mostrarLenguaje");
-        texto3.textContent = "Ingrese las variables del lenguaje";
-        texto3.className = "alert alert-warning py-3";
-        var leEntrada = document.getElementById("nEntradas").value;
-        console.log(leEntrada);
-        var count = 1;
-        var x = leEntrada;
-        let k = 1;
-        while (k <= x) {
-            var div = document.createElement('div');
-            div.setAttribute('class', 'form-inline');
-            div.innerHTML = '<div style="clear:both" class=" "' + k + ' col-md-offset-1 col-md-6"><input id="lenENvalor' + count +
-                '" class="form-control" style="margin-bottom: 2px;"  placeholder="letra de entrada ' + [k] + ' " ' + k + '" type="text"/>';
-            document.getElementById('mostrarLenguaje').appendChild(div);
-            k++;
-            count++;
-        }
+        /* while (a <= numero) {
+             var div = document.createElement('div');
+             div.setAttribute('class', 'form-inline');
+             div.innerHTML = '<div style="clear:both" class=" "' + a + ' col-md-offset-1 col-md-6"><input id="a1valor' + count1 +
+                 '" class="form-control" style="margin-bottom: 5px;"  placeholder="Nombre del estado ' + [a] + ' "  ' + a + '" type="text"/> <input type="radio" id="A1inicial' + count1 + '" name="inicia" required>Inicial <input type="checkbox" id="A1final' + count1 + '" name="final" required> Final</div>';
+             document.getElementById('formulario').appendChild(div);
+             a++;
+             count1++;
 
 
-        var div = document.createElement('div');
-        div.setAttribute('class', 'form-inline', 'a', 'style');
-        div.innerHTML = '<div class="row d-flex justify-content-center">' +
-            '<a onclick="confirmar()" class="btn btn-outline-light px-2 mb-3" style="text-align: center; max-width: 850px;">Confirme los datos</a>' +
-            '</div>';
-        document.getElementById('confirmar').appendChild(div);
+
+         }
+
+         const texto2 = document.querySelector("#formulario2");
+         texto2.textContent = "Nombres para el autómata 2";
+         texto2.className = "alert alert-warning py-4 mx-2";
+
+         count2 = 1;
+
+         let b = 1;
+         while (b <= numero2) {
+             var div = document.createElement('div');
+             div.setAttribute('class', 'form-inline');
+             div.innerHTML = '<div style="clear:both" class=" "' + b + ' col-md-offset-1 col-md-6"><input id="a2valor' + count2 +
+                 '" class="form-control" style="margin-bottom: 5px;"  placeholder="Nombre del estado ' + [b] + ' " ' + b + '" type="text"/> <input type="radio" id="A2inicial' + count2 +
+                 '" name="inicial" required>Inicial <input type="checkbox" id="A2final' + count2 + '" name="final" required> Final</div>';
+             document.getElementById('formulario2').appendChild(div);
+             b++;
+             count2++;
+         }
+
+         const texto3 = document.querySelector("#mostrarLenguaje");
+         texto3.textContent = "Ingrese las variables del lenguaje";
+         texto3.className = "alert alert-warning py-3";
+         var leEntrada = document.getElementById("nEntradas").value;
+         console.log(leEntrada);
+         var count = 1;
+         var x = leEntrada;
+         let k = 1;
+         while (k <= x) {
+             var div = document.createElement('div');
+             div.setAttribute('class', 'form-inline');
+             div.innerHTML = '<div style="clear:both" class=" "' + k + ' col-md-offset-1 col-md-6"><input id="lenENvalor' + count +
+                 '" class="form-control" style="margin-bottom: 2px;"  placeholder="letra de entrada ' + [k] + ' " ' + k + '" type="text"/>';
+             document.getElementById('mostrarLenguaje').appendChild(div);
+             k++;
+             count++;
+         }
+
+
+         var div = document.createElement('div');
+         div.setAttribute('class', 'form-inline', 'a', 'style');
+         div.innerHTML = '<div class="row d-flex justify-content-center">' +
+             '<a onclick="confirmar()" class="btn btn-outline-light px-2 mb-3" style="text-align: center; max-width: 850px;">Confirme los datos</a>' +
+             '</div>';
+         document.getElementById('confirmar').appendChild(div); */
 
 
     }
@@ -501,7 +582,6 @@
 
     function validador() {
         var arrayvali = llenar()[0];
-        var arrayvali2 = llenar()[1];
         var transi = llenarTransicion1();
         contador = 0;
         for (let i = 0; i < arrayvali.length; i++) {
@@ -518,9 +598,29 @@
 
         }
         if (contador > 0) {
-            window.alert("Hay un estado que no existe, Por favor reingresa tu opción!")
+            window.alert("Hay un estado que no existe, Por favor reingresa tu opción!");
         }
 
+    }
+
+    function validador2() {
+        var arrayvali2 = llenar()[1];
+        var transi2 = llenarTransicion2();
+        contador2 = 0;
+        for (let i = 0; i < arrayvali2.length; i++) {
+            for (let j = 0; j < transi2.length; j++) {
+                if (arrayvali2[i] !== transi2[j]) {
+                    contador2++;
+                } else {
+                    if (arrayvali2[i] === transi[j]) {
+                        contador2--;
+                    }
+                }
+            }
+        }
+        if (contador2 > 0) {
+            window.alert("Hay un estado no existe, Por favor reingrese tu opcion!");
+        }
     }
 
 
@@ -532,7 +632,7 @@
                                         Unimos mediante el Q0 ambos estados iniciales, mediante el uso del @
 
                                         Nos quedaria: (Q0-@-->q0) , (Q0-@-->w1)
-    
+                
                                         */
     function union() {
         var newEstados = ['Q0'];
@@ -594,5 +694,94 @@
 
 
     }
+
+
+    function ObtenerDatos() {
+        var transicion1 = llenarTransicion1();
+        var transicion2 = llenarTransicion2();
+        var aux1 = [];
+        var aux2 = llenarLEN();
+        var ayuda1;
+        var ayuda2;
+        var ayuda3;
+        var ayuda4;
+        var conjunto1 = llenar()[0];
+        var conjunto2 = llenar()[1];
+        var aux3 = [],
+            aux4 = [],
+            aux5 = [],
+            aux6 = [];
+        for (let i = 0; i < conjunto1.length; i++) {
+            for (let j = 0; j < aux2.length; j++) {
+                ayuda1 = conjunto1[i];
+                aux3.push(ayuda1);
+                ayuda2 = aux2[j];
+                aux4.push(ayuda2);
+            }
+        }
+        aux1.push(aux3); //Conjunto1
+        aux1.push(aux4); //Lenguaje1
+        aux1.push(transicion1); //transicion1
+        for (let i = 0; i < conjunto2.length; i++) {
+            for (let j = 0; j < aux2.length; j++) {
+                ayuda3 = conjunto2[i];
+                aux5.push(ayuda1);
+                ayuda4 = aux2[j];
+                aux6.push(ayuda2);
+            }
+        }
+        aux1.push(aux5); //Conjunto2
+        aux1.push(aux6); //Lenguaje2
+        aux1.push(transicion2); //transicion2
+        return aux1;
+    }
+
+    function simplificar() {
+        var Conjunto1 = ObtenerDatos()[0];
+        var Lenguaje1 = ObtenerDatos()[1];
+        var Transicion1 = ObtenerDatos()[2];
+        var arrayResultado = [];
+        var aux1, aux2, aux3;
+        var aux4 = [],
+            aux5 = [],
+            aux6 = [];
+        for (let i = 0; i < Conjunto1.length; i++) {
+            aux = Conjunto1[i];
+            for (let j = 0; j < Transicion1.length; j++) {
+                if (aux === Transicion1[j]) {
+                    if (Conjunto1[j] === Transicion1[i]) {
+                        aux1 = Conjunto1[i];
+                        console.log("Resultado como quedo el conjunto1", aux1);
+                        aux4.push(aux1);
+                        aux2 = Lenguaje1[i];
+                        console.log("Resultado como quedo el clenguaje1", aux2);
+                        aux5.push(aux2);
+                        aux3 = Conjunto1[i];
+                        console.log("Resultado como quedo el nueva transicion1", aux3);
+                        aux6.push(aux3);
+                    }
+                } else {
+                    aux1 = Conjunto1[i];
+                    aux4.push(aux1);
+                    aux2 = Lenguaje1[i];
+                    aux5.push(aux2);
+                    aux3 = Transicion1[i];
+                    aux6.push(aux3);
+                }
+            }
+        }
+        arrayResultado.push(aux4);
+        arrayResultado.push(aux5);
+        arrayResultado.push(aux6);
+        return arrayResultado;
+    }
+
+
+    function imprimirSimplificar() {
+        var simplificar1 = simplificar();
+        const output1 = document.querySelector("#simplicar");
+        output1.textContent = (`El conjunto Union de estados es:  [${simplificar1}]:`);
+
+    }
     //CONCATENACION:orden de concatenacion importaejemplo: A--concat--B != B--concat--A
-    //Los finales del primer automata se unen con el(los) inical(es)del segundo mediante un epsilon,luegopasana dejar de ser finales
+    //Los finales del primer automata se unen con el(los) inical(es) del segundo mediante un epsilon, luegopasana dejar de ser finales,C/+/**//
