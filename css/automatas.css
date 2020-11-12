@@ -16,6 +16,7 @@
 }
 
 :root {
+    --dark: black;
     --warning: #f0cb526c;
 }
 
@@ -63,3 +64,33 @@
         margin-right: 5% !important;
     }
 }*/
+
+.marginbtn {
+    margin-left: 32%;
+}
+
+.border-darks {
+    border-color: var(--dark) !important;
+    border-radius: 20px;
+    min-height: 250px !important;
+    max-width: 500px;
+    margin-right: 1% !important;
+}
+
+.border-darks:hover {
+    border-color: var(--danger) !important;
+    border-radius: 20px;
+    min-height: 250px !important;
+    max-width: 500px;
+}
+
+.dividerGr {
+    border-bottom: 2px solid black;
+    margin-left: 7% !important;
+    margin-right: 7% !important;
+    margin: 0;
+}
+
+.rowUnion {
+    background-color: var(--warning) !important;
+}

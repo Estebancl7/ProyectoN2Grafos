@@ -161,9 +161,9 @@
 
     var transiciones = ['Entrada', 'Lectura', 'Destino'];
 
-    //Variables para tabla de transicion1
+    //Variables para tabla dcion1
     const tablaTransicion1 = document.querySelector("#tablaTransicion1");
-    //Variables para tabla de transicion2
+    //Variables para tabla dcion2
     const tablaTransicion2 = document.querySelector("#tablaTransicion2");
 
     //Funcion llenar tabla
@@ -172,13 +172,13 @@
         var arrayTra = [];
         var tablaPadre = document.createElement('table'),
             filaTitulo = document.createElement('tr');
-        tablaPadre.style.marginLeft = "50px";
-        tablaPadre.style.marginRight = "50px";
+        tablaPadre.style.marginleft = "80px";
+        tablaPadre.style.marginRight = "80px";
         tablaPadre.style.paddingBottom = "80px";
         tablaPadre.style.paddingTop = "80px";
         for (let i = 0; i < transiciones.length; i++) {
             var colTitulo = document.createElement('td');
-            colTitulo.className = 'formatoTablaTitulo';
+            colTitulo.className = 'formatoTablaTitulo ';
             colTitulo.textContent = transiciones[i];
             colTitulo.style.width = "100px";
             colTitulo.style.height = "30px";
@@ -210,10 +210,8 @@
                 input.setAttribute('placeholder', 'Estado Destino');
                 input.setAttribute('type', 'text');
                 input.id = `${arrayConjunto[i]}-${arraylenguaje[j]}`;
-                //input.id = `${"transicion"}-${arrayConjunto[i] + count4 }`;
                 arrayTra.push(input.id);
                 count4++;
-
 
                 //agrego los elementos a sus nodos padres
                 colInput.appendChild(input);
@@ -224,27 +222,11 @@
             }
 
         }
+
         tablaTransicion1.appendChild(tablaPadre);
         console.log("este es el array", arrayTra);
 
-        // var div = document.createElement('div');
-        // div.setAttribute('class', 'form-inline', 'a', 'style');
-        // div.innerHTML = '<div class="row d-flex justify-content-center">' +
-        //     '<a onclick="llenarTransicion()" class="btn btn-outline-light px-2 mb-3" style="text-align: center; max-width: 850px;">Confirme los datos</a>' +
-        //     '</div>';
-        // document.getElementById('confirmar').appendChild(div);
-
-
-
-        // var arrayresultante = llenarTransicion(arrayConjunto, arraylenguaje);
-        //console.log(arrayresultante);
-
-        //return arrayresultante;
-
         return arrayTra;
-
-
-
 
     }
 
@@ -357,7 +339,7 @@
         output4.textContent = (`El alfabeto asociado es:  [${lenguaje}]:`);
         //output4.className = "alert alert-warning text-aling-center";
 
-        output5.textContent = (`La transicion 1 es:  [${transicion1}]:`);
+        output5.textContent = (`La transición 1 es:  [${transicion1}]:`);
         //output5.className = "alert alert-warning text-aling-center";
 
 
@@ -373,8 +355,8 @@
         output9.textContent = (`El alfabeto asociado es:  [${lenguaje}]:`);
         //output9.className = "alert alert-warning text-aling-center";
 
-        output10.textContent = (`La transicion 2 es:  [${transicion2}]:`);
-        //output10.className = "alert alert-warning text-aling-center";
+        output10.textContent = (`La transición 2 es:  [${transicion2}]:`);
+        output10.className = "mb-5";
 
 
     }
@@ -383,6 +365,7 @@
         llenarTransicion1();
         llenarTransicion2();
         primeraQuintupla();
+        validador();
 
         transicionCompleta();
         //const mostrar = document.querySelector("#quintupla");
@@ -453,8 +436,6 @@
 
 
 
-
-
     function transicionCompleta() {
         var array1 = [];
         var array2 = [];
@@ -493,14 +474,11 @@
 
     }
 
-
-
-
     function Complemento() {
-        var arrayEntradaComplemento = llenar()[2]
-        var arraySalidaComplemento = llenar()[3]
-        var arrayEntradaComplemento2 = llenar()[4]
-        var arraySalidaComplemento2 = llenar()[5]
+        var arrayEntradaComplemento = llenar()[2];
+        var arraySalidaComplemento = llenar()[3];
+        var arrayEntradaComplemento2 = llenar()[4];
+        var arraySalidaComplemento2 = llenar()[5];
         var arrayEcomplementada = [];
         var arrayScomplementada = [];
         var arrayEcomplementada2 = [];
@@ -510,7 +488,7 @@
             arrayEcomplementada = arraySalidaComplemento;
             arrayScomplementada = arrayEntradaComplemento;
             arrayEcomplementada2 = arraySalidaComplemento2;
-            arrayScomplementada = arrayScomplementada2;
+            arrayScomplementada2 = arrayEntradaComplemento2;
         }
 
         if (TipoAutoDuo == 'AFD/AFND') {
@@ -519,3 +497,102 @@
         }
 
     }
+
+
+    function validador() {
+        var arrayvali = llenar()[0];
+        var arrayvali2 = llenar()[1];
+        var transi = llenarTransicion1();
+        contador = 0;
+        for (let i = 0; i < arrayvali.length; i++) {
+            for (let j = 0; j < transi.length; j++) {
+                if (arrayvali[i] !== transi[j]) {
+                    contador++;
+                } else {
+                    if (arrayvali[i] === transi[j]) {
+                        contador--;
+                    }
+
+                }
+            }
+
+        }
+        if (contador > 0) {
+            window.alert("Hay un estado que no existe, Por favor reingresa tu opción!")
+        }
+
+    }
+
+
+
+    // Q0 es un nuevo estado que te une a traves de un epsilon los estados iniciales
+    /* Ejemplo:
+                                        Iniciales = q0,w1
+                                        Creamos el nuevo estado inicial Q0
+                                        Unimos mediante el Q0 ambos estados iniciales, mediante el uso del @
+
+                                        Nos quedaria: (Q0-@-->q0) , (Q0-@-->w1)
+    
+                                        */
+    function union() {
+        var newEstados = ['Q0'];
+        var automata1 = llenar()[0]; //conjunto del automata 1 q0, q1
+        var automata2 = llenar()[1]; // conjunto del automata 2 q2, q3
+        var salidas1 = llenar()[3];
+        var salidas2 = llenar()[5];
+        var entradas1 = llenar()[2];
+        var entradas2 = llenar()[4];
+
+        var lenguajeUnion = llenarLEN();
+        var conjuntoUnion = [],
+            unionSalidaas = [],
+            transicionUnion = [];
+
+        conjuntoUnion.push(newEstados);
+
+        for (let i = 0; i < automata1.length; i++) { // nuevo conjunto es [Q0, q0, q1]
+            conjuntoUnion.push(automata1[i]);
+        }
+
+        for (let k = 0; k < automata2.length; k++) { // nuevo conjunto es [Q0, q0, q1,q2,q3]
+            conjuntoUnion.push(automata2[k]);
+        }
+
+        for (let a = 0; a < salidas1.length; a++) {
+            unionSalidaas.push(salidas1[a]);
+        }
+        for (let b = 0; b < salidas2.length; b++) {
+            unionSalidaas.push(salidas2[b]);
+        }
+
+        lenguajeUnion.push("@");
+
+        var transicionAutomata1 = transicionCompleta()[0];
+        var transicionAutomata2 = transicionCompleta()[1];
+
+        transicionUnion.push(newEstados[0] + "-@--->", entradas1[0]);
+        transicionUnion.push(newEstados[0] + "-@--->", entradas2[0]);
+
+        for (let c = 0; c < transicionAutomata1.length; c++) {
+            transicionUnion.push(transicionAutomata1[c]);
+        }
+        for (let d = 0; d < transicionAutomata2.length; d++) {
+            transicionUnion.push(transicionAutomata2[d]);
+        }
+
+        const output1 = document.querySelector("#conjuntoUnion");
+        const output2 = document.querySelector("#entradaUnion");
+        const output3 = document.querySelector("#salidaUnion");
+        const output4 = document.querySelector("#lenguajeUnion");
+        const output5 = document.querySelector("#transicionUnion");
+
+        output1.textContent = (`El conjunto Union de estados es:  [${conjuntoUnion}]:`);
+        output2.textContent = (`El estado inicial es:  [${newEstados}]`);
+        output3.textContent = (`Las salidas de Union del automata 1 es:  [${unionSalidaas}]`);
+        output4.textContent = (`El alfabeto asociado es:  [${lenguajeUnion}]:`);
+        output5.textContent = (`La transicion de Union es:  [${transicionUnion}]:`);
+
+
+    }
+    //CONCATENACION:orden de concatenacion importaejemplo: A--concat--B != B--concat--A
+    //Los finales del primer automata se unen con el(los) inical(es)del segundo mediante un epsilon,luegopasana dejar de ser finales
