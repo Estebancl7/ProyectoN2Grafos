@@ -172,8 +172,6 @@
 
     }
 
-
-
     function llenar() {
         var arrayEntradas = [];
         var arraySalidas = [];
@@ -996,6 +994,9 @@
         var sal2 = llenar()[5];
         var lengua1 = llenarLEN()[0];
         var lengua2 = llenarLEN()[1];
+        var transicion1 = transicionCompleta()[0];
+        var transicion2 = transicionCompleta()[1];
+
         var entradasinter = [];
         var salidasinter = [];
         var conjuntointer = [];
@@ -1033,6 +1034,8 @@
 
         }
 
+    }
 
+    function prueba() {
 
     }
