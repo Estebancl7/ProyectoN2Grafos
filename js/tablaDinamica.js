@@ -630,15 +630,19 @@
 
 
             output1.textContent = (`El Complemento pasa los estados iniciales a finales y viceversa`);
-            output1.style.className = "alert alert-success";
+            output1.style.className = "divider";
             output2.textContent = (`Complemento del Automata 1`);
             output2.style.className = "py-3";
             output3.textContent = (`El conjunto del automata 1 complemento:  [${conjunto1}]`);
+            output3.style.className = "ml-3";
             output4.textContent = (`El estado inicial del automata 1 complemento:  [${arrayEcomplementada}]`);
+            output4.style.className = "ml-3";
             output5.textContent = (`Los estados finales del automata 1 complemento:  [${arrayScomplementada}]`);
+            output5.style.className = "ml-3";
             output6.textContent = (`El lenguaje del automata 1 complemento:  [${lenguaje1}]`);
+            output6.style.className = "ml-3";
             output7.textContent = (`Las transiciones del automata 1 complemento:  [${transicionAutomata1}]`);
-
+            output7.style.className = "ml-3";
             //Automata 2//
             output8.textContent = (`Complemento del Automata 2`);
             output8.style.className = "py-3";
@@ -765,16 +769,16 @@
         const output4 = document.querySelector("#lenguajeUnion");
         const output5 = document.querySelector("#transicionUnion");
 
-        output1.textContent = (`El conjunto unión de estados es:  [${conjuntoUnion}]:`);
-        output1.className = "mb-2 mx-1";
-        output2.textContent = (`El estado inicial viene dado por:  [${newEstados}]`);
-        output2.className = "mb-2 mx-1";
-        output3.textContent = (`Las salidas de Union del automata 1 es:  [${unionSalidaas}]`);
-        output3.className = "mb-2 mx-1";
-        output4.textContent = (`El alfabeto asociado es:  [${lenguajeUnion}]:`);
-        output4.className = "mb-2 mx-1";
-        output5.textContent = (`La transición de unión es:  [${transicionUnion}]:`);
-        output5.className = "mb-2 mx-1";
+        output1.textContent = (`El conjunto unión de estados es =  [${conjuntoUnion}]:`);
+        output1.className = "mb-2 ml-3";
+        output2.textContent = (`El estado inicial viene dado por =  [${newEstados}]`);
+        output2.className = "mb-2 ml-3";
+        output3.textContent = (`Las salidas de Union del automata 1 es =  [${unionSalidaas}]`);
+        output3.className = "mb-2 ml-3";
+        output4.textContent = (`El alfabeto asociado es =  [${lenguajeUnion}]:`);
+        output4.className = "mb-2 ml-3";
+        output5.textContent = (`La transición de unión es =  [${transicionUnion}]:`);
+        output5.className = "mb-2 ml-3";
 
     }
 
@@ -881,3 +885,154 @@
     //CONCATENACION:orden de concatenacion importaejemplo: A--concat--B != B--concat--A
     //Los finales del primer automata se unen con el(los) inical(es) del segundo mediante un epsilon, luegopasana dejar de ser finales,C/+/**//
     //Los finales del primer automata se unen con el(los) inical(es) del segundo mediante un epsilon, luegopasana dejar de ser finales,C/+/**//A
+
+
+    /* Se unen los estados finales con los iniciales del segundo automata
+            A; inicial = q0 , final = q1
+            B; inicial = w1 , final = w0
+
+            Si se une B-->A
+
+            Quiere decir que el nuevo inicial del conjunto unido sera: w1 y el final sera q1, se unen atraves de un epsilon 
+    */
+
+    function concatenacion() {
+
+        var conjunto1 = llenar()[0];
+        var conjunto2 = llenar()[1];
+        var entrada1 = llenar()[2];
+        var salida2 = llenar()[5];
+
+        console.log("este es el conjunto 1:", conjunto1);
+        console.log("este es el conjunto 2 :", conjunto2);
+
+        var transicion1 = transicionCompleta()[0];
+        var transicion2 = transicionCompleta()[1];
+
+        var lenguaje1 = llenarLEN()[0];
+        var lenguaje2 = llenarLEN()[1];
+
+
+        var arrayConjuntoConca = [];
+        var entradaConca = [];
+        var salidaConca = [];
+        var transicionConca = [];
+        var lenguajesConca = [];
+
+
+        for (let i = 0; i < conjunto1.length; i++) {
+            arrayConjuntoConca.push(conjunto1[i]);
+        }
+
+        for (let j = 0; j < conjunto2.length; j++) {
+            arrayConjuntoConca.push(conjunto2[j]);
+        }
+
+        entradaConca.push(entrada1[0]);
+
+
+        for (w = 0; w < salida2.length; w++) {
+            salidaConca.push(salida2[w]);
+        }
+
+
+
+
+        transicionConca.push(entrada1[0] + "-@-->" + salida2[0]);
+
+        for (let a = 0; a < transicion1.length; a++) {
+            transicionConca.push(transicion1[a]);
+        }
+
+        for (let b = 0; b < transicion1.length; b++) {
+            transicionConca.push(transicion2[b]);
+        }
+
+        for (let c = 0; c < lenguaje1.length; c++) {
+            lenguajesConca.push(lenguaje1[c]);
+        }
+
+        for (let d = 0; d < lenguaje2.length; d++) {
+            lenguajesConca.push(lenguaje2[d]);
+        }
+
+        lenguajesConca.push("@");
+
+        const output1 = document.querySelector("#conjuntoConca");
+        const output2 = document.querySelector("#entradaConca");
+        const output3 = document.querySelector("#salidaConca");
+        const output4 = document.querySelector("#lenguajeConca");
+        const output5 = document.querySelector("#transicionConca");
+
+        output1.textContent = (`El conjunto de concatenacion de estados es =  [${arrayConjuntoConca}]:`);
+        output1.className = "mb-2 ml-3";
+        output2.textContent = (`El estado inicial viene dado por =  [${entradaConca}]`);
+        output2.className = "mb-2 ml-3";
+        output3.textContent = (`Las salida de concatenacion del automata 1 es =  [${salidaConca}]`);
+        output3.className = "mb-2 ml-3";
+        output4.textContent = (`El alfabeto asociado es =  [${lenguajesConca}]:`);
+        output4.className = "mb-2 ml-3";
+        output5.textContent = (`La transición de concatenacion es =  [${transicionConca}]:`);
+        output5.className = "mb-2 ml-3";
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+    function interseccion() {
+        var conju1 = llenar()[0];
+        var conju2 = llenar()[1];
+        var entra1 = llenar()[2];
+        var entra2 = llenar()[4];
+        var sal1 = llenar()[3];
+        var sal2 = llenar()[5];
+        var lengua1 = llenarLEN()[0];
+        var lengua2 = llenarLEN()[1];
+        var entradasinter = [];
+        var salidasinter = [];
+        var conjuntointer = [];
+        var confirma = false;
+        for (let t = 0; t < lengua1.length; t++) {
+            if (lengua1[t] !== lengua2[t]) {
+                confirma = false;
+                window.alert("Los lengujes no son iguales, deben serlo para la interseccion");
+            } else {
+                confirma = true;
+            }
+        }
+        if (confirma === true) {
+            for (let i = 0; i < conju1.length; i++) {
+                for (let j = 0; j < conju2.length; j++) {
+                    conjuntointer.push(conju1[i].concat(conju2[j]));
+                }
+            }
+            console.log(conjuntointer);
+
+            for (let k = 0; k < entra1.length; k++) {
+                for (let r = 0; r < entra2.length; r++) {
+                    entradasinter.push(entra1[k].concat(entra2[r]));
+                }
+            }
+            console.log(entradasinter);
+
+            for (let m = 0; m < sal1.length; m++) {
+                for (let w = 0; w < sal2.length; w++) {
+                    salidasinter.push(sal1[m].concat(sal2[w]));
+
+                }
+            }
+            console.log(salidasinter);
+
+        }
+
+
+
+    }
