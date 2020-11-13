@@ -807,11 +807,11 @@
         aux1.push(aux3); //Conjunto1
         aux1.push(aux4); //Lenguaje1
         aux1.push(transicion1); //transicion1
-        for (let i = 0; i < conjunto2.length; i++) {
-            for (let j = 0; j < aux7.length; j++) {
-                ayuda3 = conjunto2[i];
+        for (let k = 0; k < conjunto2.length; k++) {
+            for (let l = 0; l < aux7.length; l++) {
+                ayuda3 = conjunto2[k];
                 aux5.push(ayuda1);
-                ayuda4 = aux7[j];
+                ayuda4 = aux7[l];
                 aux6.push(ayuda2);
             }
         }
@@ -830,18 +830,33 @@
         console.log(" C :", Transicion1);
         var arrayResultado = [];
         var rescatado = "";
+        var rescatado2 = "";
         var aux1, aux2, aux3;
         var aux4 = [],
             aux5 = [],
             aux6 = [];
+        Conjunto1.sort();
         for (let i = 0; i < Conjunto1.length; i++) {
             aux = Conjunto1[i];
-            for (let j = 0; j < Transicion1.length; j++) {
-                if (aux === rescatado) {
-                    if (aux !== Transicion1[j]) {
+            if (Conjunto1[i] === Transicion1[i]) {
+                if (rescatado !== aux) {
+                    aux1 = Conjunto1[i];
+                    console.log("Resultado como quedo el conjunto1 debe ser igual a la transicion1", aux1);
+                    aux4.push(aux1);
+                    aux2 = Lenguaje1[i];
+                    console.log("Resultado como quedo el lenguaje1 cuando conjunto1 debe ser igual a la transicion1 ", aux2);
+                    aux5.push(aux2);
+                    aux3 = Transicion1[i];
+                    console.log("Resultado como quedo el nueva transicion1 debe ser igual al conjunto1", aux3);
+                    aux6.push(aux3);
+                }
+            } else {
+                for (let j = 0; j < Transicion1.length; j++) {
+                    console.log("VALORES TRABAJANDO :", aux, i, Transicion1[j], j);
+                    if (aux !== rescatado && rescatado2 !== Transicion1[j]) {
                         if (aux === Transicion1[j]) {
                             if (Conjunto1[j] === Transicion1[i]) {
-                                aux1 = Transicion1[j];
+                                aux1 = Conjunto1[i];
                                 console.log("Resultado como quedo el conjunto1", aux1);
                                 aux4.push(aux1);
                                 aux2 = Lenguaje1[i];
@@ -850,19 +865,23 @@
                                 aux3 = Transicion1[j];
                                 console.log("Resultado como quedo el nueva transicion1", aux3);
                                 aux6.push(aux3);
-                                rescatado = Transicion1[j];
+                                rescatado = Conjunto1[j];
+                                rescatado2 = Conjunto1[i];
+                                console.log("RESCATADO :", rescatado);
+                                console.log("RESCATADO2 :", rescatado2);
+
+                            } else {
+                                aux1 = Conjunto1[i];
+                                console.log("Resultado como quedo el conjunto1 debe ser igual a la transicion1", aux1);
+                                aux4.push(aux1);
+                                aux2 = Lenguaje1[j];
+                                console.log("Resultado como quedo el lenguaje1 cuando conjunto1 debe ser igual a la transicion1 ", aux2);
+                                aux5.push(aux2);
+                                aux3 = Transicion1[j];
+                                console.log("Resultado como quedo el nueva transicion1 debe ser igual al conjunto1", aux3);
+                                aux6.push(aux3);
                             }
                         }
-                    } else {
-                        aux1 = Conjunto1[i];
-                        console.log("Resultado como quedo el conjunto1 debe ser igual a la transicion1", aux1);
-                        aux4.push(aux1);
-                        aux2 = Lenguaje1[i];
-                        console.log("Resultado como quedo el lenguaje1 cuando conjunto1 debe ser igual a la transicion1 ", aux2);
-                        aux5.push(aux2);
-                        aux3 = Transicion1[i];
-                        console.log("Resultado como quedo el nueva transicion1 debe ser igual al conjunto1", aux3);
-                        aux6.push(aux3);
                     }
                 }
             }
@@ -974,15 +993,6 @@
         output5.className = "mb-2 ml-3";
 
 
-
-
-
-
-
-
-
-
-
     }
 
     function interseccion() {
@@ -996,6 +1006,7 @@
         var lengua2 = llenarLEN()[1];
         var transicion1 = transicionCompleta()[0];
         var transicion2 = transicionCompleta()[1];
+        var arrayTraInter = [];
 
         var entradasinter = [];
         var salidasinter = [];
@@ -1032,10 +1043,50 @@
             }
             console.log(salidasinter);
 
+
+
+        }
+        var largo = (transicion1.length) + (transicion2.length);
+
+
+        for (let t = 0; t < largo; t++) {
+
+
+
         }
 
     }
 
-    function prueba() {
+    // function llenarTransicionInter(arrayInter) {
+    //     var aux = arrayInter;
+    //     var len = llenarLEN()[0];
 
-    }
+    //     var arrayTransiciones = [];
+    //     cont = 0;
+
+    //     for (let i = 0; i < aux.length; i++) {
+    //         for (let j = 0; j < len.length; j++) {
+    //             var t1 = [];
+    //             arrayTransiciones.push(t1);
+    //         }
+
+
+    //     }
+
+    //     console.log("las transiciones son", arrayTransiciones);
+
+
+    //     return arrayTransiciones;
+
+    // }
+
+
+    // x = "(" + a[i] + b[i] + ") --->" + c[i]
+
+
+    /* a1: q0,q1    a2: w0,w1*/
+
+    // q0w1,q0w0,q1w0, q1w1//
+    // q0w1,q0w0,q1w0, q1w1//
+
+    //cadena.substr();
