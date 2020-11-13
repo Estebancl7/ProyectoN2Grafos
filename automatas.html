@@ -77,7 +77,8 @@
                         <div class="row">
                             <div class="col-md-9">
                                 <div class="form-group">
-                                    <input class="form-control" type="number" id="nEntradas" placeholder="Ingresa N° de variables del lenguaje" required>
+                                    <input class="form-control" type="number" id="nEntradas" placeholder="N° de variables del lenguaje para el automata 1" required>
+                                    <input class="form-control mt-1" type="number" id="nEntradas2" placeholder="N° de variables del lenguaje para el automata 2" required>
                                 </div>
 
                                 <div>
@@ -109,6 +110,7 @@
                     <div class="mx-4" id="formulario2"></div>
 
                     <div class="mx-4" id="mostrarLenguaje"></div>
+                    <div class="mx-4" id="mostrarLenguaje2"></div>
                    
                 </div>
                 <div class="mt-2 align-content-center" id="confirmar"></div>  
@@ -116,12 +118,12 @@
 
                 <div id="boxs" class="row mx-2">
                     
-                    <div class="col-6 border border-danger shadow  pb-5">
+                    <div class="col-6 border-right pb-5">
                         <h2 class="text-center mt-1">Tabla de Transición Automata N°1</h2>
                         <h1 class="divider mx-2 mb-1"></h1>
                         <div class="pt-4" id="tablaTransicion1" ></div>
                     </div>
-                    <div class="col-6 border border-danger shadow pb-5">
+                    <div class="col-6 pb-5">
                         <h2 class="text-center mt-1">Tabla de Transición Automata N°2</h2>
                         <h1 class="divider mx-2 mb-1"></h1>
                         <div class="pt-4" id="tablaTransicion2"></div>
@@ -135,7 +137,7 @@
                 <div class="container" id="styless">
                     <div class="row" id="Quintupla">
                         
-                        <div class="col-md-6 pt-3">
+                        <div id="bordes"  class="col-md-6 border-right pt-3">
                             <h4 class="text-center">Quintupla Automata N°1</h4>
                             <h1 class="divider"></h1>
                             <div id="primeraQuintupla1"></div>
@@ -159,12 +161,36 @@
 
                 <div class="row pb-5 justify-content-center">
 
-                    <div class="col-6 border border-darks mt-4 my-2">
+                    <div class="col-6 border-right mt-5 my-2">
+                        
+                        <h3 class="text-center mt-2">Complemento</h3>
+                        <h1 class="dividerGr"></h1>
+                        <a onclick="Complemento()" class="btn btn-outline-light mt-4 marginbtn mb-3">Haz click para ver!</a>
+                        <div class="row justify-content-center">
+
+                            <!--<div id="simplificar" class="pt-4 pb-2"></div>-->
+                            <div id="mensajeComplemento" class=""></div>
+                            <div id="automata1Com" class=""></div>
+                            <div id="conjuntoComplemento" class=""></div>
+                            <div id="entradaComplemento" class=""></div>
+                            <div id="salidaComplemento" class=""></div>
+                            <div id="lenguajeComplemento" class=""></div>
+                            <div id="transicionComplemento" class=""></div>
+                            
+                            <div id="mensajeComplemento1" class=""></div>
+                            <div id="conjuntoComplemento1" class=""></div>
+                            <div id="entradaComplemento1" class=""></div>
+                            <div id="salidaComplemento1" class=""></div>
+                            <div id="lenguajeComplemento1" class=""></div>
+                            <div id="transicionComplemento1" class=""></div>
+                        </div>
+                    </div>
+                    <div class="col-6  my-2 mt-5">
                         <h3 class="text-center mt-2">Unión</h3>
                         <h1 class="dividerGr"></h1>
                         <a onclick="union()" class="btn btn-outline-light mt-4 marginbtn mb-3">Haz click para ver!</a>
                         <div id="rowUnion" class="row text-left">
-                            <div id="conjuntoUnion" class="pt-4"></div>
+                            <div id="conjuntoUnion" class=""></div>
                             <div id="entradaUnion" class=""></div>
                             <div id="salidaUnion" class=""></div>
                             <div id="lenguajeUnion" class=""></div>
@@ -172,17 +198,47 @@
                         </div>
                     </div>
 
+                </div>
 
-                    <div class="col-6 border border-darks mt-4 my-2">
-                        <h3 class="text-center mt-2">Concatenación</h3>
+                
+                <div class="row pb-5 justify-content-center">
+
+                    <div class="col-6 border-right mt-5 my-2">
+                        
+                        <h3 class="text-center mt-2">Simplificar</h3>
                         <h1 class="dividerGr"></h1>
-                        <a onclick="imprimirSimplificar()" class="btn btn-outline-light mt-4 marginbtn mb-3">Haz click para ver!</a>
+                        <a onclick="simplificar()" class="btn btn-outline-light mt-4 marginbtn mb-3">Haz click para ver!</a>
                         <div class="row justify-content-center">
 
-                            <div id="simplificar" class="pt-4 pb-2"></div>
+                            <!--<div id="simplificar" class="pt-4 pb-2"></div>-->
+                           <!-- <div id="mensajeComplemento" class=""></div>
+                            <div id="automata1Com" class=""></div>
+                            <div id="conjuntoComplemento" class=""></div>
+                            <div id="entradaComplemento" class=""></div>
+                            <div id="salidaComplemento" class=""></div>
+                            <div id="lenguajeComplemento" class=""></div>
+                            <div id="transicionComplemento" class=""></div>
+                            
+                            <div id="mensajeComplemento1" class=""></div>
+                            <div id="conjuntoComplemento1" class=""></div>
+                            <div id="entradaComplemento1" class=""></div>
+                            <div id="salidaComplemento1" class=""></div>
+                            <div id="lenguajeComplemento1" class=""></div>
+                            <div id="transicionComplemento1" class=""></div>-->
                         </div>
                     </div>
-
+                    <div class="col-6  my-2 mt-5">
+                        <h3 class="text-center mt-2">Concatenación</h3>
+                        <h1 class="dividerGr"></h1>
+                        <a onclick="" class="btn btn-outline-light mt-4 marginbtn mb-3">Haz click para ver!</a>
+                        <div id="rowUnion" class="row text-left">
+                            <div id="" class=""></div>
+                            <div id="" class=""></div>
+                            <div id="" class=""></div>
+                            <div id="" class=""></div>
+                            <div id="" class=""></div>
+                        </div>
+                    </div>
 
                 </div>
 
