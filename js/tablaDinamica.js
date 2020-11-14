@@ -854,8 +854,8 @@
         var contador2 = 0;
         var aux1;
         console.log("valor de ultimo if:", transi.length, transi);
-        for(let k = 0; k < transi.length; k++){
-            if(transi[k] === "@"){
+        for (let k = 0; k < transi.length; k++) {
+            if (transi[k] === "@") {
                 contador2++;
             }
         }
@@ -873,7 +873,7 @@
             window.alert("Hay un estado que no existe o puede haber un espacio(s) extra(s), Por favor reingresa tu(s) opción(es) para el Automata N°1!");
         }
     }
-        
+
 
     function validador4() { //para afnd 
         var arrayvali = llenar()[1];
@@ -881,11 +881,11 @@
         var contador = 0;
         var contador2 = 0;
         var aux1;
-        for(let k = 0; k < transi.length; k++){
-            if(transi[k] === "@"){
+        for (let k = 0; k < transi.length; k++) {
+            if (transi[k] === "@") {
                 contador2++;
             }
-        }   
+        }
         for (let i = 0; i < arrayvali.length; i++) {
             aux1 = arrayvali[i];
             for (let j = 0; j < transi.length; j++) {
@@ -1002,7 +1002,7 @@
         var transicion1 = llenarTransicion1();
         var transicion2 = llenarTransicion2();
         var aux1 = [];
-        var aux2 = llenarLEN()[0];
+        var aux2 = llenarLEN()[0]; // x y
         var aux7 = llenarLEN()[1];
         var ayuda1;
         var ayuda2;
@@ -1213,6 +1213,21 @@
 
     }
 
+    function interseccion1() {
+        var conjunto1 = llenar()[0];
+        var conjunto2 = llenar()[1];
+        var Lenguaje1 = ObtenerDatos()[1];
+        var lenguaje2 = ObtenerDatos()[4];
+        var transicion1 = llenarTransicion1();
+        var transicion2 = llenarTransicion2();
+        for (let i = 0; i < conjunto1.length; i++) {
+            for (let j = 0; j < Lenguaje1.length; j++) {
+
+            }
+        }
+
+    }
+
     function interseccion() {
         var conju1 = llenar()[0];
         var conju2 = llenar()[1];
@@ -1233,7 +1248,7 @@
         for (let t = 0; t < lengua1.length; t++) {
             if (lengua1[t] !== lengua2[t]) {
                 confirma = false;
-                window.alert("Los lengujes no son iguales, deben serlo para la interseccion");
+                window.alert("Los lenguajes no son iguales, deben serlo para la interseccion");
             } else {
                 confirma = true;
             }
@@ -1274,4 +1289,87 @@
         }
 
     }
-    
+
+    function convertirAFNDtoAFD() {
+
+        var conjunto1 = llenar()[0];
+        var conjunto2 = llenar()[1];
+        var entrada1 = llenar()[2];
+        var salida1 = llenar()[3];
+        var entrada = llenar()[4];
+        var salida2 = llenar()[5];
+
+        var nuevoConjunto = [];
+
+        var arrayAFD = [];
+        var arrayDestino = [];
+        var transicion1 = llenarTransicion1();
+        var transicion2 = llenarTransicion2();
+        var count = 1;
+
+
+        for (let i = 0; i < transicion1.length; i++) {
+            if (transicion1[i] === "@") {
+                conjunto1.push("S" + count);
+                arrayDestino.push("S" + count);
+
+
+
+
+
+
+            } else {
+                arrayDestino.push(transicion1[i]);
+
+            }
+
+        }
+
+
+        console.log(conjunto1);
+        console.log(arrayDestino);
+
+        var array1 = [];
+
+        const tablaTransicion4 = document.querySelector("#tablaTransicion3");
+        var aux = llenarLEN();
+
+        var idTra1 = TablaTransicionVacia(conjunto1, aux[0], tablaTransicion4);
+        //var idTra2 = TablaTransicionVacia(aux1[1], aux[1], tablaTransicion3);
+        console.log(idTra1);
+        cont = 1;
+
+        for (let k = 0; k < idTra1.length; k++) {
+            var t = "S" + cont + "-" + aux[0][0];
+            var p = "S" + cont + "-" + aux[0][1];
+
+            if (idTra1[k] === t) {
+                arrayDestino.push("S");
+
+            } else {
+                if (idTra1[k] === p) {
+                    arrayDestino.push("S");
+                }
+
+            }
+
+        }
+
+
+
+        for (let i = 0; i < idTra1.length; i++) {
+            var conca = [idTra1[i] + " --> " + arrayDestino[i]];
+            array1.push(conca);
+        }
+
+
+
+        console.log(array1);
+    }
+
+    // for (let j = 0; j < idTra2.length; j++) {
+    //     var conca2 = [idTra2[j] + " --> " + transicion2[j]];
+    //     array2.push(conca2);
+    // }   var conca2 = [idTra2[j] + " --> " + transicion2[j]];
+    //     array2.push(conca2);
+    // }
