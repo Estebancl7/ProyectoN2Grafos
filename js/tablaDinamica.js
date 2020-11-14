@@ -11,11 +11,12 @@
 
             console.log("Es AFND");
             return TipoAuto2;
-        } else if (TipoAutoDuo == 'AFD/AFND') {
+        } else if (TipoAutoDuo === 'AFD/AFND') {
             console.log("Es combinacion");
             return TipoAutoDuo;
         }
     }
+
 
     //Formulario
     function addFormulario() {
@@ -108,8 +109,154 @@
             document.getElementById('confirmar').appendChild(div);
 
         } else if (TipoDato === 'AFND') {
+            while (a <= numero) {
+                var div = document.createElement('div');
+                div.setAttribute('class', 'form-inline');
+                div.innerHTML = '<div style="clear:both" class=" "' + a + ' col-md-offset-1 col-md-6"><input id="a1valor' + count1 +
+                    '" class="form-control" style="margin-bottom: 5px;"  placeholder="Nombre del estado ' + [a] + ' "  ' + a + '" type="text"/> <input type="radio" id="A1inicial' + count1 + '" name="inicia" required>Inicial <input type="checkbox" id="A1final' + count1 + '" name="final" required> Final</div>';
+                document.getElementById('formulario').appendChild(div);
+                a++;
+                count1++;
+
+
+
+            }
+
+            const texto2 = document.querySelector("#formulario2");
+            texto2.textContent = "Nombres para el autómata 2";
+            texto2.className = "alert alert-warning py-4 mx-2";
+
+            count2 = 1;
+
+            let b = 1;
+            while (b <= numero2) {
+                var div = document.createElement('div');
+                div.setAttribute('class', 'form-inline');
+                div.innerHTML = '<div style="clear:both" class=" "' + b + ' col-md-offset-1 col-md-6"><input id="a2valor' + count2 +
+                    '" class="form-control" style="margin-bottom: 5px;"  placeholder="Nombre del estado ' + [b] + ' " ' + b + '" type="text"/> <input type="radio" id="A2inicial' + count2 +
+                    '" name="inicial" required>Inicial <input type="checkbox" id="A2final' + count2 + '" name="final" required> Final</div>';
+                document.getElementById('formulario2').appendChild(div);
+                b++;
+                count2++;
+            }
+            const texto3 = document.querySelector("#mostrarLenguaje");
+            texto3.textContent = "Variables automata 1";
+            texto3.className = "alert alert-warning py-3 mr-2";
+            var leEntrada = document.getElementById("nEntradas").value;
+            console.log(leEntrada);
+            var count = 1;
+            var x = leEntrada;
+            let k = 1;
+            while (k <= x) {
+                var div = document.createElement('div');
+                div.setAttribute('class', 'form-inline');
+                div.innerHTML = '<div style="clear:both" class=" "' + k + ' col-md-offset-1 col-md-6"><input id="lenENvalor' + count +
+                    '" class="form-control" style="margin-bottom: 2px;"  placeholder="letra de entrada ' + [k] + ' " ' + k + '" type="text"/>';
+                document.getElementById('mostrarLenguaje').appendChild(div);
+                k++;
+                count++;
+            }
+
+            const texto4 = document.querySelector("#mostrarLenguaje2");
+            texto4.textContent = "Variables Automata 2 ";
+            texto4.className = "alert alert-warning py-3 ml-2";
+            var leEntrada2 = document.getElementById("nEntradas2").value;
+            console.log(leEntrada2);
+            var count5 = 1;
+            var p = leEntrada2;
+            let m = 1;
+            while (m <= p) {
+                var div = document.createElement('div');
+                div.setAttribute('class', 'form-inline');
+                div.innerHTML = '<div style="clear:both" class=" "' + m + ' col-md-offset-1 col-md-6"><input id="2enENvalor' + count5 +
+                    '" class="form-control" style="margin-bottom: 2px;"  placeholder="letra de entrada ' + [m] + ' " ' + m + '" type="text"/>';
+                document.getElementById('mostrarLenguaje2').appendChild(div);
+                m++;
+                count5++;
+            }
+
+
+            var div = document.createElement('div');
+            div.setAttribute('class', 'form-inline', 'a', 'style');
+            div.innerHTML = '<div class="row d-flex justify-content-center">' +
+                '<a onclick="confirmar()" class="btn btn-outline-light px-2 mb-3" style="text-align: center; max-width: 850px;">Confirme los datos</a>' +
+                '</div>';
+            document.getElementById('confirmar').appendChild(div);
 
         } else if (TipoDato === 'AFD/AFND') {
+            while (a <= numero) {
+                var div = document.createElement('div');
+                div.setAttribute('class', 'form-inline');
+                div.innerHTML = '<div style="clear:both" class=" "' + a + ' col-md-offset-1 col-md-6"><input id="a1valor' + count1 +
+                    '" class="form-control" style="margin-bottom: 5px;"  placeholder="Nombre del estado ' + [a] + ' "  ' + a + '" type="text"/> <input type="radio" id="A1inicial' + count1 + '" name="inicia" required>Inicial <input type="checkbox" id="A1final' + count1 + '" name="final" required> Final</div>';
+                document.getElementById('formulario').appendChild(div);
+                a++;
+                count1++;
+
+
+
+            }
+
+            const texto2 = document.querySelector("#formulario2");
+            texto2.textContent = "Nombres para el autómata 2";
+            texto2.className = "alert alert-warning py-4 mx-2";
+
+            count2 = 1;
+
+            let b = 1;
+            while (b <= numero2) {
+                var div = document.createElement('div');
+                div.setAttribute('class', 'form-inline');
+                div.innerHTML = '<div style="clear:both" class=" "' + b + ' col-md-offset-1 col-md-6"><input id="a2valor' + count2 +
+                    '" class="form-control" style="margin-bottom: 5px;"  placeholder="Nombre del estado ' + [b] + ' " ' + b + '" type="text"/> <input type="radio" id="A2inicial' + count2 +
+                    '" name="inicial" required>Inicial <input type="checkbox" id="A2final' + count2 + '" name="final" required> Final</div>';
+                document.getElementById('formulario2').appendChild(div);
+                b++;
+                count2++;
+            }
+            const texto3 = document.querySelector("#mostrarLenguaje");
+            texto3.textContent = "Variables automata 1";
+            texto3.className = "alert alert-warning py-3 mr-2";
+            var leEntrada = document.getElementById("nEntradas").value;
+            console.log(leEntrada);
+            var count = 1;
+            var x = leEntrada;
+            let k = 1;
+            while (k <= x) {
+                var div = document.createElement('div');
+                div.setAttribute('class', 'form-inline');
+                div.innerHTML = '<div style="clear:both" class=" "' + k + ' col-md-offset-1 col-md-6"><input id="lenENvalor' + count +
+                    '" class="form-control" style="margin-bottom: 2px;"  placeholder="letra de entrada ' + [k] + ' " ' + k + '" type="text"/>';
+                document.getElementById('mostrarLenguaje').appendChild(div);
+                k++;
+                count++;
+            }
+
+            const texto4 = document.querySelector("#mostrarLenguaje2");
+            texto4.textContent = "Variables Automata 2 ";
+            texto4.className = "alert alert-warning py-3 ml-2";
+            var leEntrada2 = document.getElementById("nEntradas2").value;
+            console.log(leEntrada2);
+            var count5 = 1;
+            var p = leEntrada2;
+            let m = 1;
+            while (m <= p) {
+                var div = document.createElement('div');
+                div.setAttribute('class', 'form-inline');
+                div.innerHTML = '<div style="clear:both" class=" "' + m + ' col-md-offset-1 col-md-6"><input id="2enENvalor' + count5 +
+                    '" class="form-control" style="margin-bottom: 2px;"  placeholder="letra de entrada ' + [m] + ' " ' + m + '" type="text"/>';
+                document.getElementById('mostrarLenguaje2').appendChild(div);
+                m++;
+                count5++;
+            }
+
+
+            var div = document.createElement('div');
+            div.setAttribute('class', 'form-inline', 'a', 'style');
+            div.innerHTML = '<div class="row d-flex justify-content-center">' +
+                '<a onclick="confirmar()" class="btn btn-outline-light px-2 mb-3" style="text-align: center; max-width: 850px;">Confirme los datos</a>' +
+                '</div>';
+            document.getElementById('confirmar').appendChild(div);
 
         }
         /* while (a <= numero) {
@@ -284,7 +431,7 @@
         var arrayTra = [];
         var tablaPadre = document.createElement('table'),
             filaTitulo = document.createElement('tr');
-        tablaPadre.style.marginLeft = "100px";
+        tablaPadre.style.marginLeft = "93px";
         //tablaPadre.style.marginRight = "10px";
         tablaPadre.style.paddingBottom = "80px";
         tablaPadre.style.paddingTop = "80px";
@@ -478,9 +625,7 @@
         llenarTransicion1();
         llenarTransicion2();
         primeraQuintupla();
-        validador1();
-        validador2();
-
+        validadorGeneral();
         transicionCompleta();
         //const mostrar = document.querySelector("#quintupla");
         //mostrar.appendChild(primeraQuintupla());
@@ -653,12 +798,13 @@
 
         }
 
-        if (TipoAutoDuo == 'AFD/AFND') {
+        if (TipoAuto5 == 'AFD/AFND') {
             arrayEcomplementada = arraySalidaComplemento;
             arrayScomplementada = arrayEntradaComplemento;
         }
 
     }
+
 
 
     function validador1() {
@@ -677,7 +823,7 @@
             }
         }
         if (contador !== transi.length) {
-            window.alert("Hay un estado que no existe, Por favor reingresa tu opción para el Automata N°1!");
+            window.alert("Hay un estado que no existe o puede haber un espacio(s) extra(s), Por favor reingresa tu(s) opción(es) para el Automata N°1!");
         }
     }
 
@@ -697,7 +843,79 @@
             }
         }
         if (contador !== transi.length) {
-            window.alert("Hay un estado que no existe, Por favor reingresa tu opción para el Automata N°2!");
+            window.alert("Hay un estado que no existe o puede haber un espacio(s) extra(s), Por favor reingresa tu(s) opción(es) para el Automata N°2!");
+        }
+    }
+
+    function validador3() { //para afnd 
+        var arrayvali = llenar()[0];
+        var transi = llenarTransicion1();
+        var contador = 0;
+        var contador2 = 0;
+        var aux1;
+        console.log("valor de ultimo if:", transi.length, transi);
+        for(let k = 0; k < transi.length; k++){
+            if(transi[k] === "@"){
+                contador2++;
+            }
+        }
+        for (let i = 0; i < arrayvali.length; i++) {
+            aux1 = arrayvali[i];
+            for (let j = 0; j < transi.length; j++) { //para afd no sirve el @
+                if (transi[j] === "" || transi[j] === " " || transi[j] === "  " || transi[j] === "   ") {
+                    window.alert("Por favor llenar el/los Destino(s) faltantes en el Automata  N°1!");
+                } else if (aux1 === transi[j]) { // || transi[j] == "@") {
+                    contador++;
+                }
+            }
+        }
+        if ((contador + contador2) !== transi.length) {
+            window.alert("Hay un estado que no existe o puede haber un espacio(s) extra(s), Por favor reingresa tu(s) opción(es) para el Automata N°1!");
+        }
+    }
+        
+
+    function validador4() { //para afnd 
+        var arrayvali = llenar()[1];
+        var transi = llenarTransicion2();
+        var contador = 0;
+        var contador2 = 0;
+        var aux1;
+        for(let k = 0; k < transi.length; k++){
+            if(transi[k] === "@"){
+                contador2++;
+            }
+        }   
+        for (let i = 0; i < arrayvali.length; i++) {
+            aux1 = arrayvali[i];
+            for (let j = 0; j < transi.length; j++) {
+                if (transi[j] === "" || transi[j] === " " || transi[j] === "  " || transi[j] === "   ") {
+                    window.alert("Por favor llenar el/los Destino(s) faltantes en el Automata  N°2!");
+                } else if (aux1 === transi[j]) {
+                    contador++;
+                }
+            }
+        }
+        console.log("VALOR FINAL CONTADOR4", contador);
+        if ((contador + contador2) !== transi.length) {
+            window.alert("Hay un estado que no existe o puede haber un espacio(s) extra(s), Por favor reingresa tu(s) opción(es) para el Automata N°2!");
+        }
+    }
+
+    function validadorGeneral() {
+        var TipoDatos = identificaDatos();
+        if (TipoDatos === 'AFD') {
+            console.log("entro a validador AFD");
+            validador1();
+            validador2();
+        } else if (TipoDatos === 'AFND') {
+            console.log("entro a validador AFND");
+            validador3();
+            validador4();
+        } else if (TipoDatos === 'AFD/AFND') {
+            console.log("entro a validador AFD/AFND");
+            validador1();
+            validador4();
         }
     }
 
@@ -1056,37 +1274,4 @@
         }
 
     }
-
-    // function llenarTransicionInter(arrayInter) {
-    //     var aux = arrayInter;
-    //     var len = llenarLEN()[0];
-
-    //     var arrayTransiciones = [];
-    //     cont = 0;
-
-    //     for (let i = 0; i < aux.length; i++) {
-    //         for (let j = 0; j < len.length; j++) {
-    //             var t1 = [];
-    //             arrayTransiciones.push(t1);
-    //         }
-
-
-    //     }
-
-    //     console.log("las transiciones son", arrayTransiciones);
-
-
-    //     return arrayTransiciones;
-
-    // }
-
-
-    // x = "(" + a[i] + b[i] + ") --->" + c[i]
-
-
-    /* a1: q0,q1    a2: w0,w1*/
-
-    // q0w1,q0w0,q1w0, q1w1//
-    // q0w1,q0w0,q1w0, q1w1//
-
-    //cadena.substr();
+    
