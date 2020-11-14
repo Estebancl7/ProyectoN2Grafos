@@ -109,17 +109,13 @@
                 
                 <div class="row justify-content-center mx-5">
                     <div id="mostrarmsj"></div>
-                    <div class="mx-4" id="formulario">
-                    
-                    </div>
+                    <div class="mx-4" id="formulario"></div>
                     <div class="mx-4" id="formulario2"></div>
                     <div class="mx-4" id="mostrarLenguaje"></div>
                     <div class="mx-4" id="mostrarLenguaje2"></div>
-                   
                 </div>
                 <div class="mt-2 align-content-center" id="confirmar"></div>  
             </div>
-
                 <div id="boxs" class="row mx-2">
                     
                     <div class="col-6 border-right pb-5">
@@ -162,17 +158,14 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="row pb-5">
-
+                
+                <div class="row pb-5 justify-content-center">
                     <div class="col-6 border-right mt-5 my-2">
                         
                         <h3 class="text-center mt-2">Complemento</h3>
                         <h1 class="dividerGr"></h1>
                         <a onclick="Complemento()" class="btn btn-outline-light mt-4 marginbtn mb-3">Haz click para ver!</a>
-                        <div id="rowUnion2" class="rowUnion">
-
-                            <!--<div id="simplificar" class="pt-4 pb-2"></div>-->
+                        <div id="rowUnion2" class="row">
                             <div id="mensajeComplemento" class="ml-3"></div>
                             <div id="automata1Com" class="ml-3"></div>
                             <div id="conjuntoComplemento" class="ml-3"></div>
@@ -187,13 +180,16 @@
                             <div id="salidaComplemento1" class="ml-3"></div>
                             <div id="lenguajeComplemento1" class="ml-3"></div>
                             <div id="transicionComplemento1" class="ml-3"></div>
+                
                         </div>
                     </div>
-                    <div class="col-6  my-2 mt-5">
+
+                    <div class="col-6 border-right mt-5 my-2">
+                        
                         <h3 class="text-center mt-2">Unión</h3>
                         <h1 class="dividerGr"></h1>
                         <a onclick="union()" class="btn btn-outline-light mt-4 marginbtn mb-3">Haz click para ver!</a>
-                        <div id="rowUnion" class="rowUnion text-left">
+                        <div id="rowUnion" class="row text-left">
                             <div id="conjuntoUnion" class=""></div>
                             <div id="entradaUnion" class=""></div>
                             <div id="salidaUnion" class=""></div>
@@ -201,11 +197,6 @@
                             <div id="transicionUnion" class=""></div>
                         </div>
                     </div>
-
-                </div>
-
-                
-                <div class="row pb-5 justify-content-center">
 
                     <div class="col-6 border-right mt-5 my-2">
                         
@@ -253,23 +244,33 @@
                     </div>
 
                     
-                    <div class="col-6  my-2 mt-5">
+                    <div class="col-9  my-2 mt-5">
                         <h3 class="text-center mt-2">Pasar de AFD a AFND</h3>
                         <h1 class="dividerGr"></h1>
                         <a onclick="convertirAFNDtoAFD()" class="btn btn-outline-light mt-4 marginbtn mb-3">Haz click para ver!</a>
-                        <div id="rowUnion" class="row text-left">
-                        <!--    <div id="mensajeInter" class=""></div>
-                            <div id="conjuntoInter" class=""></div>
-                            <div id="entradaInter" class=""></div>
-                            <div id="salidaInter" class=""></div>
-                            <div id="lenguajeInter" class=""></div>
-                            <div id="transicionInter" class=""></div>
-                            -->
+                        <div id="rowUnion" class="row text-left ml-3 justify-content-center">
+                            <div id="bordes2" class="col-12 ml-3 mb-4">
+                                <div id="mensajeGeneral"></div>
+                                <div id="mensajeConvertido" class=""></div>
+                                <div id="conjuntoConvertido" class=""></div>
+                                <div id="entradaConvertido" class=""></div>
+                                <div id="salidaConvertido" class=""></div>
+                                <div id="lenguajeConvertido" class=""></div>
+                                <div id="transicionConvertido" class=""></div>    
+                            </div>
+                            <div class="col-12 ml-3 mb-4">
+                                <div id="mensajeConvertido1" class=""></div>
+                                <div id="conjuntoConvertido1" class=""></div>
+                                <div id="entradaConvertido1" class=""></div>
+                                <div id="salidaConvertido1" class=""></div>
+                                <div id="lenguajeConvertido1" class=""></div>
+                                <div id="transicionConvertido1" class=""></div>    
+                            </div>
                         </div>
                     </div>
                 </div>
 
-        </div>
+        <!--</div>-->
 
     </div>
 
@@ -280,4 +281,4 @@
 
 
 <script src="js/tablaDinamica.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>r
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
