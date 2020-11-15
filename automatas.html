@@ -49,8 +49,8 @@
             <h1 class="text-center">Ingresa los tipos de Autómata</h1>
             <h1 class="divider1"></h1>
             <div class="text-center">
-                <p><strong>Importante!</strong> Si seleccionas automatas que contengan AFND,<br> el valor de epsilon sera reemplazado por un <i><strong>@</strong></i></p>
-                <p>---> Los estados <strong>Sumideros</strong><br> estaran representados por la letra <i><strong>S</strong></i></p>
+                <p><strong>Importante!</strong> <br><i class="far fa-check-circle"></i> Si seleccionas automatas que contengan AFND,<br> considera epsilon como un caracter     <i><strong>@</strong></i></p>
+                <p><i class="far fa-check-circle"></i> Los estados <strong>Sumideros</strong><br> estarán representados por la letra <i><strong>S</strong></i></p>
             </div>
             <div class="row pt-3 justify-content-center">
                 <div class="col-md-6 mx-5">
@@ -195,24 +195,39 @@
                             <div id="salidaUnion" class=""></div>
                             <div id="lenguajeUnion" class=""></div>
                             <div id="transicionUnion" class=""></div>
+                        <!--<a onclick="convertirAFNDtoAFD()" class="btn btn-outline-light mt-4 marginbtn mb-3">Transformar a AFD!</a>-->
                         </div>
+
                     </div>
 
                     <div class="col-6 border-right mt-5 my-2">
                         
                         <h3 class="text-center mt-2">Simplificar</h3>
                         <h1 class="dividerGr"></h1>
-                        <a onclick="simplificar()" class="btn btn-outline-light mt-4 marginbtn mb-3">Haz click para ver!</a>
+                        <a onclick="imprimirSim()" class="btn btn-outline-light mt-4 marginbtn mb-3">Haz click para ver!</a>
                         <div id="rowUnion2" class="row">
+                            <div>
+                                <div id="mensajeSimpli" class=""></div>
+                                <div id="automata1Simpli" class=""></div>
+                                <div id="conjuntoSimpli" class=""></div>
+                                <div id="entradaSimpli" class=""></div>
+                                <div id="salidaSimpli" class=""></div>
+                                <div id="lenguajeSimpli" class=""></div>
+                                <div id="transicionSimpli" class=""></div>
 
+                            </div>
+                            <div>
+                                <div id="mensajeSimpli1" class=""></div>
+                                <div id="automata1Simpli1" class=""></div>
+                                <div id="conjuntoSimpli1" class=""></div>
+                                <div id="entradaSimpli1" class=""></div>
+                                <div id="salidaSimpli1" class=""></div>
+                                <div id="lenguajeSimpli1" class=""></div>
+                                <div id="transicionSimpli1" class=""></div>
+                            </div>
                             <!--<div id="simplificar" class="pt-4 pb-2"></div>-->
-                            <div id="mensajeComplemento" class=""></div>
-                            <div id="automata1Com" class=""></div>
-                            <div id="conjuntoComplemento" class=""></div>
-                            <div id="entradaComplemento" class=""></div>
-                            <div id="salidaComplemento" class=""></div>
-                            <div id="lenguajeComplemento" class=""></div>
-                            <div id="transicionComplemento" class=""></div>
+                            
+
                         </div>
                     </div>
                     <div class="col-6  my-2 mt-5">
@@ -232,7 +247,7 @@
                     <div class="col-6  my-2 mt-5">
                         <h3 class="text-center mt-2">Intersección</h3>
                         <h1 class="dividerGr"></h1>
-                        <a onclick="interseccion()" class="btn btn-outline-light mt-4 marginbtn mb-3">Haz click para ver!</a>
+                        <a onclick="interseccion1()" class="btn btn-outline-light mt-4 marginbtn2 mb-3">Haz click para ver!</a>
                         <div id="rowUnion2" class="row text-left">
                             <div id="mensajeInter" class=""></div>
                             <div id="conjuntoInter" class=""></div>
@@ -245,9 +260,9 @@
 
                     
                     <div class="col-9  my-2 mt-5">
-                        <h3 class="text-center mt-2">Pasar de AFD a AFND</h3>
+                        <h3 class="text-center mt-2">Pasar de AFND a AFD</h3>
                         <h1 class="dividerGr"></h1>
-                        <a onclick="convertirAFNDtoAFD()" class="btn btn-outline-light mt-4 marginbtn mb-3">Haz click para ver!</a>
+                        <a onclick="convertirAFNDtoAFD()" class="btn btn-outline-light mt-4 marginbtn1 mb-3">Haz click para ver!</a>
                         <div id="rowUnion" class="row text-left ml-3 justify-content-center">
                             <div id="bordes2" class="col-12 ml-3 mb-4">
                                 <div id="mensajeGeneral"></div>
@@ -282,3 +297,4 @@
 
 <script src="js/tablaDinamica.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/c8152ea011.js" crossorigin="anonymous"></script>
