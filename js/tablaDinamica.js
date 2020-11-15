@@ -1127,6 +1127,16 @@
         lenguaje1 = llenarLEN()[0];
         lenguaje2 = llenarLEN()[1];
 
+        var transicionFinal = [];
+
+
+        for (let l = 0; l < aux4.length; l++) {
+            var final = arrayResultado[0][l] + "-" + arrayResultado[1][l] + " ---> " + arrayResultado[2][l];
+            transicionFinal.push(final);
+        }
+
+
+
 
 
         const output1 = document.querySelector("#mensajeSimpli");
@@ -1146,7 +1156,7 @@
         output4.className = "mb-2 ml-3";
         output5.textContent = (`El alfabeto asociado es =  [${arrayResultado[1]}]:`);
         output5.className = "mb-2 ml-3";
-        output6.textContent = (`La transición de concatenacion es =  [${arrayResultado[2]}]:`);
+        output6.textContent = (`La transición de concatenacion es =  [${transicionFinal}]:`);
         output6.className = "mb-2 ml-3";
         return arrayResultado;
     }
@@ -1229,7 +1239,13 @@
 
 
 
+        var transicionFinal = [];
 
+
+        for (let l = 0; l < aux4.length; l++) {
+            var final = arrayResultado[0][l] + "-" + arrayResultado[1][l] + " ---> " + arrayResultado[2][l];
+            transicionFinal.push(final);
+        }
 
 
         entrada2 = llenar()[4];
@@ -1253,7 +1269,7 @@
         output4.className = "mb-2 ml-3";
         output5.textContent = (`El alfabeto asociado es =  [${arrayResultado[1]}]:`);
         output5.className = "mb-2 ml-3";
-        output6.textContent = (`La transición de concatenacion es =  [${arrayResultado[2]}]:`);
+        output6.textContent = (`La transición de concatenacion es =  [${transicionFinal[2]}]:`);
         output6.className = "mb-2 ml-3";
         return arrayResultado;
     }
@@ -1367,7 +1383,7 @@
             y finalmente al automata resultante
             lo complementas otra vez*/
 
-    function interseccion1() {
+    function interseccion() {
         var conjunto1 = ObtenerDatos()[0]; //q0 q0 q1 q1
         conjunto1.sort();
         var conjunto2 = ObtenerDatos()[3]; //w0 w0 w1 w1
@@ -1394,7 +1410,13 @@
             aux11 = [],
             aux12 = [],
             aux13 = [],
-            aux14 = [];
+            aux14 = [],
+            aux15 = [],
+            aux16 = [],
+            aux17 = [],
+            aux18 = [],
+            aux19 = [],
+            aux20 = [];
 
         for (let i = 0; i < entrada1.length; i++) {
             var aux = entrada1[i];
@@ -1427,11 +1449,11 @@
         /**Salidas */
         for (let g = 0; g < conjunto1.length; g++) {
             var aux8 = conjunto1[g];
-            if (aux8 !== entrada1[0] || aux8 !== entrada2[0]) {
+            if (aux8 !== entrada1[0]) {
                 for (let f = 0; f < finales1.length; f++) {
                     if (aux8 === finales1[f]) {
                         aux9.push(conjunto1[g]);
-                        aux10.push(Lenguaje[g]);
+                        aux10.push(Lenguaje1[g]);
                         aux11.push(transicion1[g]);
                     }
                 }
@@ -1440,8 +1462,8 @@
         }
         for (let o = 0; o < conjunto1.length; o++) {
             var aux8 = conjunto2[o];
-            if (aux8 !== entrada1[0] || aux8 !== entrada2[0]) {
-                for (let y = 0; y < finales1.length; y++) {
+            if (aux8 !== entrada2[0]) {
+                for (let y = 0; y < finales2.length; y++) {
                     if (aux8 === finales2[y]) {
                         aux12.push(conjunto2[o]);
                         aux13.push(Lenguaje2[o]);
@@ -1449,78 +1471,52 @@
                     }
                 }
             }
-
+        }
+        for (let p = 0; p < aux3.length; p++) {
+            for (let q = 0; q < aux6.length; q++) {
+                if (aux10[p] === aux13[q]) {
+                    var final = aux9[p] + aux12[q] + "-" + aux10[p] + " ---> " + aux11[p] + aux14[q];
+                    transicionFinal.push(final);
+                }
+            }
         }
 
+        for (let n = 0; n < finales1.length; n++) {
+            for (let w = 0; w < conjunto1.length; w++) {
+                if (conjunto1[w] !== entrada1[0]) {
+                    if (conjunto1[w] !== finales1[n]) {
+                        aux15.push(conjunto1[w]);
+                        aux16.push(Lenguaje1[w]);
+                        aux17.push(transicion1[w]);
+                    }
 
+                }
+            }
+        }
 
+        for (let z = 0; z < finales2.length; z++) {
+            for (let u = 0; u < conjunto2.length; u++) {
+                if (conjunto2[u] !== entrada2[0]) {
+                    if (conjunto2[u] !== finales2[z]) {
+                        aux18.push(conjunto2[u]);
+                        aux19.push(Lenguaje2[u]);
+                        aux20.push(transicion2[u]);
+                    }
 
+                }
+            }
+        }
 
+        for (let h = 0; h < aux16.length; h++) {
+            for (let v = 0; v < aux19.length; v++) {
+                if (aux16[h] === aux19[v]) {
+                    var final = aux15[h] + aux18[v] + "-" + aux16[h] + " ---> " + aux17[h] + aux20[v];
+                    transicionFinal.push(final);
+                }
+            }
+        }
         console.log("este es el arreglo de transicion final :", transicionFinal);
         return transicionFinal;
-    }
-
-
-    function interseccion() {
-        var conju1 = llenar()[0];
-        var conju2 = llenar()[1];
-        var entra1 = llenar()[2];
-        var entra2 = llenar()[4];
-        var sal1 = llenar()[3];
-        var sal2 = llenar()[5];
-        var lengua1 = llenarLEN()[0];
-        var lengua2 = llenarLEN()[1];
-        var transicion1 = transicionCompleta()[0];
-        var transicion2 = transicionCompleta()[1];
-        var arrayTraInter = [];
-
-        var entradasinter = [];
-        var salidasinter = [];
-        var conjuntointer = [];
-        var confirma = false;
-        for (let t = 0; t < lengua1.length; t++) {
-            if (lengua1[t] !== lengua2[t]) {
-                confirma = false;
-                window.alert("Los lenguajes no son iguales, deben serlo para la interseccion");
-            } else {
-                confirma = true;
-            }
-        }
-        if (confirma === true) {
-            for (let i = 0; i < conju1.length; i++) {
-                for (let j = 0; j < conju2.length; j++) {
-                    conjuntointer.push(conju1[i].concat(conju2[j]));
-                }
-            }
-            console.log(conjuntointer);
-
-            for (let k = 0; k < entra1.length; k++) {
-                for (let r = 0; r < entra2.length; r++) {
-                    entradasinter.push(entra1[k].concat(entra2[r]));
-                }
-            }
-            console.log(entradasinter);
-
-            for (let m = 0; m < sal1.length; m++) {
-                for (let w = 0; w < sal2.length; w++) {
-                    salidasinter.push(sal1[m].concat(sal2[w]));
-
-                }
-            }
-            console.log(salidasinter);
-
-
-
-        }
-        var largo = (transicion1.length) + (transicion2.length);
-
-
-        for (let t = 0; t < largo; t++) {
-
-
-
-        }
-
     }
 
     Array.prototype.unique = function(a) {
@@ -1615,6 +1611,7 @@
 
                 var conjuntoAFND2 = conjunto2.unique();
 
+
                 console.log(conjuntoAFND2);
                 console.log(arrayDestino2);
 
@@ -1702,9 +1699,27 @@
                 }
                 console.log("Aca deberia mostrarlooooo");
                 console.log("nuevo arreglo", nuevoArreglo);
+
+                var arregloAux = [];
+                for (let d = 0; d < nuevoArreglo.length; d++) {
+                    for (let n = 0; n < nuevoArreglo[d].length; n++) {
+                        var aux21 = nuevoArreglo[d][n];
+                        if (aux21 !== '-') {
+                            var concate = concate + aux21;
+                            arregloAux.push(concate);
+                        }
+                    }
+                }
+
+                console.log(arregloAux);
+
+                /* obtener el valor de conjunto por separado
+                    
+                */
+
             }
         } else if (TipoAutomata === 'AFD/AFND') {
-            // automata 2//
+            // automata 2//0
 
             const tablaTransicion3 = document.querySelector("#tablaTransicion4");
 
