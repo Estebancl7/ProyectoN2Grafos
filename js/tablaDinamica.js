@@ -1418,6 +1418,9 @@
             aux19 = [],
             aux20 = [];
         var Entra = llenar()[2];
+        var Sale = llenar()[3];
+        var Entra2 = llenar()[4];
+        var Sale2 = llenar()[5];
         var arrayEinter = [];
         var arraySinter = [];
         for (let t = 0; t < lengua1.length; t++) {
@@ -1525,6 +1528,7 @@
                     transicionFinal.push(final);
                 }
             }
+
         }
         console.log("Este es el Arreglo de Transicion Final :", transicionFinal);
         const output1 = document.querySelector("#mensajeInter");
@@ -1830,6 +1834,6 @@
             output11.textContent = (`Los estados finales =  [${salida2}]`);
             output12.textContent = (`El lenguaje =  [${lenguaje2}]`);
             output13.textContent = (`Las transiciones =  [${array2}]`);
-            console.log("Prueba");
+
         }
     }
