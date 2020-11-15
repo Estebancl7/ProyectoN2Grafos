@@ -1417,6 +1417,9 @@
             aux18 = [],
             aux19 = [],
             aux20 = [];
+        var Entra = llenar()[2];
+        var arrayEinter = [];
+        var arraySinter = [];
         for (let t = 0; t < lengua1.length; t++) {
             if (lengua1[t] !== lengua2[t]) {
                 confirma = false;
@@ -1827,6 +1830,6 @@
             output11.textContent = (`Los estados finales =  [${salida2}]`);
             output12.textContent = (`El lenguaje =  [${lenguaje2}]`);
             output13.textContent = (`Las transiciones =  [${array2}]`);
-
+            console.log("Prueba");
         }
     }
