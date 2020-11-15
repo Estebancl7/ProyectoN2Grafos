@@ -1530,6 +1530,11 @@
             }
 
         }
+        for (let y = 0; y < Entra.length; y++) {
+            for (let q = 0; q < Entra2.length; q++) {
+                arrayEinter.push(Entra[y].concat(Entra2[q]));
+            }
+        }
         console.log("Este es el Arreglo de Transicion Final :", transicionFinal);
         const output1 = document.querySelector("#mensajeInter");
         const output3 = document.querySelector("#conjuntoInter");
