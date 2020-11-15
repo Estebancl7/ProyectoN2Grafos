@@ -1839,6 +1839,6 @@
             output11.textContent = (`Los estados finales =  [${salida2}]`);
             output12.textContent = (`El lenguaje =  [${lenguaje2}]`);
             output13.textContent = (`Las transiciones =  [${array2}]`);
-
+            console.log("Optimizacion en curso");
         }
     }
