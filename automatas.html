@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.css">
     
     <link rel="icon" href="img/Grafos.png">
-    <title>Autómatas</title>
+    <title>Aut&oacutematas</title>
     
 </head>
 
@@ -46,7 +46,7 @@
 
     <div class="container">
         <div class="border border-dark shadow rounded my-5 pb-5">
-            <h1 class="text-center">Ingresa los tipos de Autómata</h1>
+            <h1 class="text-center">Ingresa los tipos de Aut&oacutemata</h1>
             <h1 class="divider1"></h1>
             <div class="text-center">
                 <p><strong>Importante!</strong> <br><i class="far fa-check-circle"></i> Si seleccionas automatas que contengan AFND,<br> considera epsilon como un caracter     <i><strong>@</strong></i></p>
@@ -54,13 +54,13 @@
             </div>
             <div class="row pt-3 justify-content-center">
                 <div class="col-md-6 mx-5">
-                    <p><strong>1.</strong> Elige el tipo de autómata que ingresaras:</p>
+                    <p><strong>1.</strong> Elige el tipo de aut&oacutemata que ingresaras:</p>
                     <select class="form-control mb-3" id="tipoAutomata">
                         <option id="1AFD" value="AFD">2 AFD</option>
                         <option id="1AFND" value="AFND">2 AFND</option>
                         <option id="1AFD/AFND" value="AFD/AFND">1 AFD y 1 AFND</option>
                     </select>
-                    <p><strong>2.</strong> Ahora indica el N° de estados de los autómatas</p>
+                    <p><strong>2.</strong> Ahora indica el N° de estados de los aut&oacutematas</p>
                     <div class="col-md-12">
                         <div class="row">
                             <div class="col-md-9">
@@ -119,12 +119,12 @@
                 <div id="boxs" class="row mx-2">
                     
                     <div class="col-6 border-right pb-5">
-                        <h2 class="text-center mt-1">Tabla de Transición Automata N°1</h2>
+                        <h2 class="text-center mt-1">Tabla de Transici&oacuten Aut&oacutemata N°1</h2>
                         <h1 class="divider mx-2 mb-1"></h1>
                         <div class="pt-4" id="tablaTransicion1" ></div>
                     </div>
                     <div class="col-6 pb-5">
-                        <h2 class="text-center mt-1">Tabla de Transición Automata N°2</h2>
+                        <h2 class="text-center mt-1">Tabla de Transici&oacuten Aut&oacutemata N°2</h2>
                         <h1 class="divider mx-2 mb-1"></h1>
                         <div class="pt-4" id="tablaTransicion2"></div>
                     </div>
@@ -138,7 +138,7 @@
                     <div class="row" id="Quintupla">
                         
                         <div id="bordes"  class="col-md-6 border-right pt-3">
-                            <h3 class="text-center">Quintupla Automata N°1</h3>
+                            <h3 class="text-center">Quintupla Aut&oacutemata N°1</h3>
                             <h1 class="divider"></h1>
                             <div id="primeraQuintupla1"></div>
                             <div id="primeraQuintupla2"></div>
@@ -148,7 +148,7 @@
                         </div>
                         <h1></h1>
                         <div class="col-md-6 pt-3">
-                            <h3 class="text-center">Quintupla Automata N°2</h3>
+                            <h3 class="text-center">Quintupla Aut&oacutemata N°2</h3>
                             <h1 class="divider"></h1>
                             <div id="segundaQuintupla1"></div>
                             <div id="segundaQuintupla2"></div>
@@ -186,7 +186,7 @@
 
                     <div class="col-6 border-right mt-5 my-2">
                         
-                        <h3 class="text-center mt-2">Unión</h3>
+                        <h3 class="text-center mt-2">Uni&oacuten</h3>
                         <h1 class="dividerGr"></h1>
                         <a onclick="union()" class="btn btn-outline-light mt-4 marginbtn mb-3">Haz click para ver!</a>
                         <div id="rowUnion" class="row text-left">
@@ -195,6 +195,14 @@
                             <div id="salidaUnion" class=""></div>
                             <div id="lenguajeUnion" class=""></div>
                             <div id="transicionUnion" class=""></div>
+                            <hr>
+                            <div id="mensajeUnionAFD" class=""></div>
+                            <div id="conjuntoUnionAFD" class=""></div>
+                            <div id="entradaUnionAFD" class=""></div>
+                            <div id="salidaUnionAFD" class=""></div>
+                            <div id="lenguajeUnionAFD" class=""></div>
+                            <div id="transicionUnionAFD" class=""></div>
+                        
                         <!--<a onclick="convertirAFNDtoAFD()" class="btn btn-outline-light mt-4 marginbtn mb-3">Transformar a AFD!</a>-->
                         </div>
 
@@ -231,7 +239,7 @@
                         </div>
                     </div>
                     <div class="col-6  my-2 mt-5">
-                        <h3 class="text-center mt-2">Concatenación</h3>
+                        <h3 class="text-center mt-2">Concatenaci&oacuten</h3>
                         <h1 class="dividerGr"></h1>
                         <a onclick="concatenacion()" class="btn btn-outline-light mt-4 marginbtn mb-3">Haz click para ver!</a>
                         <div id="rowUnion" class="row text-left">
@@ -241,11 +249,18 @@
                             <div id="salidaConca" class=""></div>
                             <div id="lenguajeConca" class=""></div>
                             <div id="transicionConca" class=""></div>
+
+                            <div id="mensajeConcaAFD" class=""></div>
+                            <div id="conjuntoConcaAFD" class=""></div>
+                            <div id="entradaConcaAFD" class=""></div>
+                            <div id="salidaConcaAFD" class=""></div>
+                            <div id="lenguajeConcaAFD" class=""></div>
+                            <div id="transicionConcaAFD" class=""></div>
                         </div>
                     </div>
                     
                     <div class="col-6  my-2 mt-5">
-                        <h3 class="text-center mt-2">Intersección</h3>
+                        <h3 class="text-center mt-2">Intersecci&oacuten</h3>
                         <h1 class="dividerGr"></h1>
                         <a onclick="interseccion()" class="btn btn-outline-light mt-4 marginbtn2 mb-3">Haz click para ver!</a>
                         <div id="rowUnion2" class="row text-left">

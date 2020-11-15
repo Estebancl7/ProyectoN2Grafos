@@ -29,7 +29,7 @@
         var aux2 = [];
         count1 = 1;
         const texto1 = document.querySelector("#formulario");
-        texto1.textContent = "Nombres para el autómata 1";
+        texto1.textContent = "Nombres para el automata 1";
         texto1.className = "alert alert-warning py-4 mx-2";
         var TipoDato = identificaDatos(); //La agregue
         if (TipoDato === 'AFD') {
@@ -41,13 +41,10 @@
                 document.getElementById('formulario').appendChild(div);
                 a++;
                 count1++;
-
-
-
             }
 
             const texto2 = document.querySelector("#formulario2");
-            texto2.textContent = "Nombres para el autómata 2";
+            texto2.textContent = "Nombres para el automata 2";
             texto2.className = "alert alert-warning py-4 mx-2";
 
             count2 = 1;
@@ -76,7 +73,7 @@
                 var div = document.createElement('div');
                 div.setAttribute('class', 'form-inline');
                 div.innerHTML = '<div style="clear:both" class=" "' + k + ' col-md-offset-1 col-md-6"><input id="lenENvalor' + count +
-                    '" class="form-control" style="margin-bottom: 2px;"  placeholder="letra de entrada ' + [k] + ' " ' + k + '" type="text"/>';
+                    '" class="form-control" style="margin-bottom: 2px;"  placeholder="Letra de entrada ' + [k] + ' " ' + k + '" type="text"/>';
                 document.getElementById('mostrarLenguaje').appendChild(div);
                 k++;
                 count++;
@@ -94,7 +91,7 @@
                 var div = document.createElement('div');
                 div.setAttribute('class', 'form-inline');
                 div.innerHTML = '<div style="clear:both" class=" "' + m + ' col-md-offset-1 col-md-6"><input id="2enENvalor' + count5 +
-                    '" class="form-control" style="margin-bottom: 2px;"  placeholder="letra de entrada ' + [m] + ' " ' + m + '" type="text"/>';
+                    '" class="form-control" style="margin-bottom: 2px;"  placeholder="Letra de entrada ' + [m] + ' " ' + m + '" type="text"/>';
                 document.getElementById('mostrarLenguaje2').appendChild(div);
                 m++;
                 count5++;
@@ -123,7 +120,7 @@
             }
 
             const texto2 = document.querySelector("#formulario2");
-            texto2.textContent = "Nombres para el autómata 2";
+            texto2.textContent = "Nombres para el automata 2";
             texto2.className = "alert alert-warning py-4 mx-2";
 
             count2 = 1;
@@ -151,7 +148,7 @@
                 var div = document.createElement('div');
                 div.setAttribute('class', 'form-inline');
                 div.innerHTML = '<div style="clear:both" class=" "' + k + ' col-md-offset-1 col-md-6"><input id="lenENvalor' + count +
-                    '" class="form-control" style="margin-bottom: 2px;"  placeholder="letra de entrada ' + [k] + ' " ' + k + '" type="text"/>';
+                    '" class="form-control" style="margin-bottom: 2px;"  placeholder="Letra de entrada ' + [k] + ' " ' + k + '" type="text"/>';
                 document.getElementById('mostrarLenguaje').appendChild(div);
                 k++;
                 count++;
@@ -169,7 +166,7 @@
                 var div = document.createElement('div');
                 div.setAttribute('class', 'form-inline');
                 div.innerHTML = '<div style="clear:both" class=" "' + m + ' col-md-offset-1 col-md-6"><input id="2enENvalor' + count5 +
-                    '" class="form-control" style="margin-bottom: 2px;"  placeholder="letra de entrada ' + [m] + ' " ' + m + '" type="text"/>';
+                    '" class="form-control" style="margin-bottom: 2px;"  placeholder="Letra de entrada ' + [m] + ' " ' + m + '" type="text"/>';
                 document.getElementById('mostrarLenguaje2').appendChild(div);
                 m++;
                 count5++;
@@ -198,7 +195,7 @@
             }
 
             const texto2 = document.querySelector("#formulario2");
-            texto2.textContent = "Nombres para el autómata 2";
+            texto2.textContent = "Nombres para el automata 2";
             texto2.className = "alert alert-warning py-4 mx-2";
 
             count2 = 1;
@@ -319,7 +316,6 @@
         arrayReturn.push(arraySalidas); //3
         arrayReturn.push(arrayEntradas2); //4
         arrayReturn.push(arraySalidas2); //5
-        //console.log("aqui sabre que onda : ", arrayReturn[0][1]);
 
 
         return arrayReturn;
@@ -426,7 +422,6 @@
         }
 
         tablaTransicion1.appendChild(tablaPadre);
-        console.log("este es el array", arrayTra);
 
         return arrayTra;
 
@@ -542,7 +537,7 @@
         output4.textContent = (`El alfabeto asociado es:  [${lenguaje}]:`);
         //output4.className = "alert alert-warning text-aling-center";
 
-        output5.textContent = (`La transición 1 es:  [${transicion1}]:`);
+        output5.textContent = (`La transicion 1 es:  [${transicion1}]:`);
         //output5.className = "alert alert-warning text-aling-center";
 
 
@@ -558,13 +553,13 @@
         output9.textContent = (`El alfabeto asociado es:  [${lenguaje2}]:`);
         //output9.className = "alert alert-warning text-aling-center";
 
-        output10.textContent = (`La transición 2 es:  [${transicion2}]:`);
+        output10.textContent = (`La transicion 2 es:  [${transicion2}]:`);
         output10.className = "mb-5";
 
 
     }
 
-    function confirmarTRA() {
+    function confirmarTRA2() {
         llenarTransicion1();
         llenarTransicion2();
         primeraQuintupla();
@@ -660,11 +655,15 @@
             array2.push(conca2);
         }
 
-        console.log("este es el array: ", array1);
-        console.log("este es el array: ", array2);
+        console.log("este es el array1: ", array1);
+        console.log("este es el array2: ", array2);
 
-        arrayresultante.push(array1);
-        arrayresultante.push(array2);
+        arrayresultante.push(array1); //0
+        arrayresultante.push(array2); //1
+        arrayresultante.push(idTra1); //2
+        arrayresultante.push(transicion1); //3
+        arrayresultante.push(idTra2); //4
+        arrayresultante.push(transicion2); //5
 
         return arrayresultante;
 
@@ -784,13 +783,15 @@
             for (let j = 0; j < transi.length; j++) { //para afd no sirve el @
                 if (transi[j] === "" || transi[j] === " " || transi[j] === "  " || transi[j] === "   ") {
                     window.alert("Por favor llenar el/los Destino(s) faltantes en el Automata  N°1!");
-                } else if (aux1 === transi[j]) { // || transi[j] == "@") {
+                    return 0;
+                } else if (aux1 === transi[j]) {
                     contador++;
                 }
             }
         }
         if (contador !== transi.length) {
             window.alert("Hay un estado que no existe o puede haber un espacio(s) extra(s), Por favor reingresa tu(s) opción(es) para el Automata N°1!");
+            return 0;
         }
     }
 
@@ -804,6 +805,7 @@
             for (let j = 0; j < transi.length; j++) {
                 if (transi[j] === "" || transi[j] === " " || transi[j] === "  " || transi[j] === "   ") {
                     window.alert("Por favor llenar el/los Destino(s) faltantes en el Automata N°2!");
+                    return 0;
                 } else if (aux1 === transi[j]) {
                     contador++;
                 }
@@ -811,6 +813,7 @@
         }
         if (contador !== transi.length) {
             window.alert("Hay un estado que no existe o puede haber un espacio(s) extra(s), Por favor reingresa tu(s) opción(es) para el Automata N°2!");
+            return 0;
         }
     }
 
@@ -831,6 +834,7 @@
             for (let j = 0; j < transi.length; j++) { //para afd no sirve el @
                 if (transi[j] === "" || transi[j] === " " || transi[j] === "  " || transi[j] === "   ") {
                     window.alert("Por favor llenar el/los Destino(s) faltantes en el Automata  N°1!");
+                    return 0;
                 } else if (aux1 === transi[j]) { // || transi[j] == "@") {
                     contador++;
                 }
@@ -838,6 +842,7 @@
         }
         if ((contador + contador2) !== transi.length) {
             window.alert("Hay un estado que no existe o puede haber un espacio(s) extra(s), Por favor reingresa tu(s) opción(es) para el Automata N°1!");
+            return 0;
         }
     }
 
@@ -858,6 +863,7 @@
             for (let j = 0; j < transi.length; j++) {
                 if (transi[j] === "" || transi[j] === " " || transi[j] === "  " || transi[j] === "   ") {
                     window.alert("Por favor llenar el/los Destino(s) faltantes en el Automata  N°2!");
+                    return 0;
                 } else if (aux1 === transi[j]) {
                     contador++;
                 }
@@ -866,23 +872,62 @@
         console.log("VALOR FINAL CONTADOR4", contador);
         if ((contador + contador2) !== transi.length) {
             window.alert("Hay un estado que no existe o puede haber un espacio(s) extra(s), Por favor reingresa tu(s) opción(es) para el Automata N°2!");
+            return 0;
         }
     }
 
-    function validadorGeneral() {
+    function confirmarTRA() {
         var TipoDatos = identificaDatos();
         if (TipoDatos === 'AFD') {
             console.log("entro a validador AFD");
-            validador1();
-            validador2();
+            var aux1 = validador1();
+            var aux2 = validador2();
+            if (aux1 === 0) {
+                return 0;
+
+            } else if (aux2 === 0) {
+                return 0;
+            } else {
+                llenarTransicion1();
+                llenarTransicion2();
+                primeraQuintupla();
+                transicionCompleta();
+                //const mostrar = document.querySelector("#quintupla");
+                //mostrar.appendChild(primeraQuintupla());
+            }
         } else if (TipoDatos === 'AFND') {
             console.log("entro a validador AFND");
-            validador3();
-            validador4();
+            var aux3 = validador3();
+            var aux4 = validador4();
+            if (aux3 === 0) {
+                return 0;
+            } else if (aux4 === 0) {
+                return 0;
+            } else {
+                llenarTransicion1();
+                llenarTransicion2();
+                primeraQuintupla();
+                transicionCompleta();
+                //const mostrar = document.querySelector("#quintupla");
+                //mostrar.appendChild(primeraQuintupla());
+            }
         } else if (TipoDatos === 'AFD/AFND') {
             console.log("entro a validador AFD/AFND");
-            validador1();
-            validador4();
+            var aux5 = validador1();
+            var aux6 = validador4();
+            if (aux5 === 0) {
+                return 0;
+
+            } else if (aux6 === 0) {
+                return 0;
+            } else {
+                llenarTransicion1();
+                llenarTransicion2();
+                primeraQuintupla();
+                transicionCompleta();
+                //const mostrar = document.querySelector("#quintupla");
+                //mostrar.appendChild(primeraQuintupla());
+            }
         }
     }
 
@@ -952,7 +997,7 @@
         const output4 = document.querySelector("#lenguajeUnion");
         const output5 = document.querySelector("#transicionUnion");
 
-        output1.textContent = (`El conjunto unión de estados es =  [${conjuntoUnion}]:`);
+        output1.textContent = (`El conjunto union de estados es =  [${conjuntoUnion}]:`);
         output1.className = "mb-2 ml-3";
         output2.textContent = (`El estado inicial viene dado por =  [${newEstados}]`);
         output2.className = "mb-2 ml-3";
@@ -960,51 +1005,10 @@
         output3.className = "mb-2 ml-3";
         output4.textContent = (`El alfabeto asociado es =  [${lenguajeUnion}]:`);
         output4.className = "mb-2 ml-3";
-        output5.textContent = (`La transición de unión es =  [${transicionUnion}]:`);
+        output5.textContent = (`La transicion de union es =  [${transicionUnion}]:`);
         output5.className = "mb-2 ml-3";
 
-
-        /***PRUEBAAAAAAAAAAAAA   */
-
-        // var conjunto1 = conjuntoUnion;
-        // var arrayDestino = [];
-
-        // for (let i = 0; i < transicionUnion.length; i++) {
-        //     if (transicionUnion[i] === "@") {
-        //         conjunto1.push("S" + count);
-        //         arrayDestino.push("S" + count);
-        //     } else {
-        //         arrayDestino.push(transicionUnion[i]);
-        //     }
-        // }
-        // console.log(conjunto1);
-        // var conjuntoAFND = conjunto1.unique();
-        // console.log(conjuntoAFND);
-        // console.log(arrayDestino);
-        // var array1 = [];
-        // const tablaTransicion4 = document.querySelector("#tablaTransicion3");
-        // var aux = lenguajeUnion;
-        // var idTra1 = TablaTransicionVacia(conjuntoAFND, aux, tablaTransicion4);
-        // console.log(idTra1);
-        // cont = 1;
-
-        // for (let k = 0; k < idTra1.length; k++) {
-        //     var t = "S" + cont + "-" + aux[0][0];
-        //     var p = "S" + cont + "-" + aux[0][1];
-        //     if (idTra1[k] === t) {
-        //         arrayDestino.push("S" + cont);
-        //     } else {
-        //         if (idTra1[k] === p) {
-        //             arrayDestino.push("S" + cont);
-        //         }
-        //     }
-        // }
-        // for (let i = 0; i < idTra1.length; i++) {
-        //     var conca = [idTra1[i] + " --> " + arrayDestino[i]];
-        //     array1.push(conca);
-        // }
-        // console.log(array1);
-
+        ChilevsPeru2(conjuntoUnion, newEstados, unionSalidaas, lenguajeUnion, transicionUnion);
 
 
 
@@ -1053,11 +1057,11 @@
 
     function simplificar1() { //simplificar 1°er Automata
         var Conjunto1 = ObtenerDatos()[0]; // x e y ----> q0, q1 y q2 ------> [q0 q0 q1 q1 q2 q2]
-        console.log(" A :", Conjunto1);
+
         var Lenguaje1 = ObtenerDatos()[1]; // x e y ----> q0, q1 y q2 ------> [x y x y x y]
-        console.log(" B :", Lenguaje1);
+
         var Transicion1 = ObtenerDatos()[2]; // [q1 q2 q0 q1 q2 q1]
-        console.log(" C :", Transicion1);
+
         var arrayResultado = [];
         var rescatado = "";
         var rescatado2 = "";
@@ -1156,7 +1160,7 @@
         output4.className = "mb-2 ml-3";
         output5.textContent = (`El alfabeto asociado es =  [${arrayResultado[1]}]:`);
         output5.className = "mb-2 ml-3";
-        output6.textContent = (`La transición de concatenacion es =  [${transicionFinal}]:`);
+        output6.textContent = (`La transicion de concatenacion es =  [${transicionFinal}]:`);
         output6.className = "mb-2 ml-3";
         return arrayResultado;
     }
@@ -1168,11 +1172,11 @@
 
     function simplificar2() { //simplificar 2°do Automata
         var Conjunto1 = ObtenerDatos()[3]; // x e y ----> q0, q1 y q2 ------> [q0 q0 q1 q1 q2 q2]
-        console.log(" A :", Conjunto1);
+
         var Lenguaje1 = ObtenerDatos()[4]; // x e y ----> q0, q1 y q2 ------> [x y x y x y]
-        console.log(" B :", Lenguaje1);
+
         var Transicion1 = ObtenerDatos()[5]; // [q1 q2 q0 q1 q2 q1]
-        console.log(" C :", Transicion1);
+
         var arrayResultado = [];
         var rescatado = "";
         var rescatado2 = "";
@@ -1269,7 +1273,7 @@
         output4.className = "mb-2 ml-3";
         output5.textContent = (`El alfabeto asociado es =  [${arrayResultado[1]}]:`);
         output5.className = "mb-2 ml-3";
-        output6.textContent = (`La transición de concatenacion es =  [${transicionFinal[2]}]:`);
+        output6.textContent = (`La transicion de concatenacion es =  [${transicionFinal[2]}]:`);
         output6.className = "mb-2 ml-3";
         return arrayResultado;
     }
@@ -1278,10 +1282,6 @@
         var simplificarA1 = simplificar1();
         var simplificarA2 = simplificar2();
     }
-
-
-
-
 
     //CONCATENACION:orden de concatenacion importaejemplo: A--concat--B != B--concat--A
     //Los finales del primer automata se unen con el(los) inical(es) del segundo mediante un epsilon, luegopasana dejar de ser finales,C/+/**//
@@ -1320,7 +1320,6 @@
         var transicionConca = [];
         var lenguajesConca = [];
 
-
         for (let i = 0; i < conjunto1.length; i++) {
             arrayConjuntoConca.push(conjunto1[i]);
         }
@@ -1331,13 +1330,9 @@
 
         entradaConca.push(entrada1[0]);
 
-
         for (w = 0; w < salida2.length; w++) {
             salidaConca.push(salida2[w]);
         }
-
-
-
 
         transicionConca.push(entrada1[0] + "-@-->" + salida2[0]);
 
@@ -1373,16 +1368,212 @@
         output3.className = "mb-2 ml-3";
         output4.textContent = (`El alfabeto asociado es =  [${lenguajesConca}]:`);
         output4.className = "mb-2 ml-3";
-        output5.textContent = (`La transición de concatenacion es =  [${transicionConca}]:`);
+        output5.textContent = (`La transicion de concatenacion es =  [${transicionConca}]:`);
         output5.className = "mb-2 ml-3";
 
 
+        ChilevsPeru(arrayConjuntoConca, entradaConca, salidaConca, lenguajesConca, transicionConca);
+    }
+
+    function ChilevsPeru(arrayConjunto, entradaFun, salidasFun, lenguajeFun, transicionFun) {
+
+        var newLenguaje = [];
+        var newConjunto = arrayConjunto;
+        var newTransicion = [];
+        var transicionAnt = [];
+        var transicionfinal = [];
+
+
+        var idCon1 = transicionCompleta()[2];
+        var traCon = transicionCompleta()[3];
+        var idCon2 = transicionCompleta()[4];
+        var traCon2 = transicionCompleta()[5];
+
+        console.log(traCon);
+        console.log(traCon);
+        count = 1;
+
+        for (let i = 0; i < lenguajeFun.length; i++) {
+            var validador = lenguajeFun[i];
+
+            if (validador === "@") {
+                newConjunto.push("S" + count);
+                newLenguaje.push("S" + count);
+            } else {
+                newLenguaje.push(validador);
+            }
+
+        }
+        const tablaTransicion3 = document.querySelector("#tablaTransicion4");
+        var idTra1 = TablaTransicionVacia(newConjunto, newLenguaje, tablaTransicion3);
+
+        for (let j = 0; j < idCon1.length; j++) {
+            newTransicion.push(idCon1[j]);
+        }
+
+        for (let k = 0; k < idCon2.length; k++) {
+            newTransicion.push(idCon2[k]);
+        }
+
+        for (let p = 0; p < traCon.length; p++) {
+            transicionAnt.push(traCon[p]);
+        }
+        for (let t = 0; t < traCon2.length; t++) {
+            transicionAnt.push(traCon2[t]);
+        }
+
+        for (let r = 0; r < idTra1.length; r++) {
+            for (let t = 0; t < newTransicion.length; t++) {
+                if (idTra1[r] === newTransicion[t]) {
+                    transicionfinal.push(transicionAnt[t]);
+                    t = newTransicion.length;
+                } else if (t === (newTransicion.length - 1)) {
+                    transicionfinal.push("S1");
+                }
+            }
+        }
+
+
+        console.log("esta es la transicion antigua", newTransicion);
+        console.log("esta son datos antigua", transicionAnt);
+
+
+        console.log("este es el nuevo conjunto", newConjunto);
+        console.log("este es el lenguaje", newLenguaje);
+
+        console.log("este es el nuevo id", idTra1);
+
+        console.log("TRANSICION FINAL :", transicionfinal);
+        var array2 = [];
+
+        for (let g = 0; g < idTra1.length; g++) {
+            var conca2 = [idTra1[g] + " --> " + transicionfinal[g]];
+            array2.push(conca2);
+        }
+
+
+        const output1 = document.querySelector("#mensajeConcaAFD");
+        const output2 = document.querySelector("#conjuntoConcaAFD");
+        const output3 = document.querySelector("#entradaConcaAFD");
+        const output4 = document.querySelector("#salidaConcaAFD");
+        const output5 = document.querySelector("#lenguajeConcaAFD");
+        const output6 = document.querySelector("#transicionConcaAFD");
+
+        output1.textContent = (`El Automata transformado a AFD viene dado por: `);
+        output1.className = "my-4 ml-3 text-center";
+        output2.textContent = (`El conjunto esta dado por =  [${newConjunto}]:`);
+        output2.className = "mb-2 ml-3";
+        output3.textContent = (`El estado inicial viene dado por =  [${entradaFun}]`);
+        output3.className = "mb-2 ml-3";
+        output4.textContent = (`Las salidas de  del automata 1 es =  [${salidasFun}]`);
+        output4.className = "mb-2 ml-3";
+        output5.textContent = (`El alfabeto asociado es =  [${newLenguaje}]:`);
+        output5.className = "mb-2 ml-3";
+        output6.textContent = (`La transicion es =  [${array2}]:`);
+        output6.className = "mb-2 ml-3";
+
+    }
+
+    function ChilevsPeru2(arrayConjunto, entradaFun, salidasFun, lenguajeFun, transicionFun) {
+
+        var newLenguaje = [];
+        var newConjunto = arrayConjunto;
+        var newTransicion = [];
+        var transicionAnt = [];
+        var transicionfinal = [];
+
+
+        var idCon1 = transicionCompleta()[2];
+        var traCon = transicionCompleta()[3];
+        var idCon2 = transicionCompleta()[4];
+        var traCon2 = transicionCompleta()[5];
+
+        console.log(traCon);
+        console.log(traCon);
+        count = 1;
+
+        for (let i = 0; i < lenguajeFun.length; i++) {
+            var validador = lenguajeFun[i];
+
+            if (validador === "@") {
+                newConjunto.push("S" + count);
+                newLenguaje.push("S" + count);
+            } else {
+                newLenguaje.push(validador);
+            }
+
+        }
+        const tablaTransicion3 = document.querySelector("#tablaTransicion4");
+        var idTra1 = TablaTransicionVacia(newConjunto, newLenguaje, tablaTransicion3);
+
+        for (let j = 0; j < idCon1.length; j++) {
+            newTransicion.push(idCon1[j]);
+        }
+
+        for (let k = 0; k < idCon2.length; k++) {
+            newTransicion.push(idCon2[k]);
+        }
+
+        for (let p = 0; p < traCon.length; p++) {
+            transicionAnt.push(traCon[p]);
+        }
+        for (let t = 0; t < traCon2.length; t++) {
+            transicionAnt.push(traCon2[t]);
+        }
+
+        for (let r = 0; r < idTra1.length; r++) {
+            for (let t = 0; t < newTransicion.length; t++) {
+                if (idTra1[r] === newTransicion[t]) {
+                    transicionfinal.push(transicionAnt[t]);
+                    t = newTransicion.length;
+                } else if (t === (newTransicion.length - 1)) {
+                    transicionfinal.push("S1");
+                }
+            }
+        }
+
+
+        console.log("esta es la transicion antigua", newTransicion);
+        console.log("esta son datos antigua", transicionAnt);
+
+        console.log("este es el nuevo conjunto", newConjunto);
+        console.log("este es el lenguaje", newLenguaje);
+
+        console.log("este es el nuevo id", idTra1);
+
+        console.log("TRANSICION FINAL SUPREMA:", transicionfinal);
+        var array2 = [];
+
+        for (let g = 0; g < idTra1.length; g++) {
+            var conca2 = [idTra1[g] + " --> " + transicionfinal[g]];
+            array2.push(conca2);
+        }
+
+        const output1 = document.querySelector("#mensajeUnionAFD");
+        const output2 = document.querySelector("#conjuntoUnionAFD");
+        const output3 = document.querySelector("#entradaUnionAFD");
+        const output4 = document.querySelector("#salidaUnionAFD");
+        const output5 = document.querySelector("#lenguajeUnionAFD");
+        const output6 = document.querySelector("#transicionUnionAFD");
+
+        output1.textContent = (`El Automata transformado a AFD viene dado por: `);
+        output1.className = "my-4 ml-3 text-center";
+        output2.textContent = (`El conjunto viene dado por =  [${newConjunto}]:`);
+        output2.className = "mb-2 ml-3";
+        output3.textContent = (`El estado inicial viene dado por =  [${entradaFun}]`);
+        output3.className = "mb-2 ml-3";
+        output4.textContent = (`Las salidas es =  [${salidasFun}]`);
+        output4.className = "mb-2 ml-3";
+        output5.textContent = (`El alfabeto asociado es =  [${newLenguaje}]:`);
+        output5.className = "mb-2 ml-3";
+        output6.textContent = (`La transicion es =  [${array2}]:`);
+        output6.className = "mb-2 ml-3";
+
     }
     /* Le sacas el complemento al primer automata
-            Luego al 2do automata, luego a esos dos automatas los unes, 
-            y finalmente al automata resultante
-            lo complementas otra vez*/
-
+                Luego al 2do automata, luego a esos dos automatas los unes, 
+                y finalmente al automata resultante
+                lo complementas otra vez*/
     function interseccion() {
         var conjunto1 = ObtenerDatos()[0]; //q0 q0 q1 q1
         conjunto1.sort();
@@ -1393,6 +1584,8 @@
         var finales1 = llenar()[3];
         var entrada2 = llenar()[4];
         var finales2 = llenar()[5];
+        var lengua1 = llenarLEN()[0];
+        var lengua2 = llenarLEN()[1];
         var Lenguaje1 = ObtenerDatos()[1];
         var Lenguaje2 = ObtenerDatos()[4];
         var transicion1 = llenarTransicion1();
@@ -1417,7 +1610,15 @@
             aux18 = [],
             aux19 = [],
             aux20 = [];
-
+        for (let t = 0; t < lengua1.length; t++) {
+            if (lengua1[t] !== lengua2[t]) {
+                confirma = false;
+                window.alert("Los lenguajes no son iguales, deben serlo para la interseccion");
+                return 0;
+            } else {
+                confirma = true;
+            }
+        }
         for (let i = 0; i < entrada1.length; i++) {
             var aux = entrada1[i];
             for (let j = 0; j < Lenguaje1.length; j++) {
@@ -1516,6 +1717,15 @@
             }
         }
         console.log("este es el arreglo de transicion final :", transicionFinal);
+        const output1 = document.querySelector("#mensajeInter");
+        const output3 = document.querySelector("#conjuntoInter"); //conjunto a1
+        const output4 = document.querySelector("#entradaInter"); // entrada
+        const output5 = document.querySelector("#salidaInter"); // salidas
+        const output6 = document.querySelector("#lenguajeInter"); // lenguaje
+        const output7 = document.querySelector("#transicionInter"); // transicion
+
+        output7.textContent = (`Las transicion viene dada por:  [${transicionFinal}]`);
+
         return transicionFinal;
     }
 
@@ -1606,16 +1816,11 @@
 
                 }
 
-
                 console.log(conjunto2);
 
                 var conjuntoAFND2 = conjunto2.unique();
-
-
                 console.log(conjuntoAFND2);
                 console.log(arrayDestino2);
-
-
 
                 var idTra2 = TablaTransicionVacia(conjuntoAFND2, aux[1], tablaTransicion3);
 
@@ -1624,21 +1829,22 @@
                 var aux6 = llenarLEN();
                 console.log(idTra2);
 
-
                 for (let n = 0; n < idTra2.length; n++) {
                     var j = "S" + cont + "-" + aux6[1][0];
                     var r = "S" + cont + "-" + aux6[1][1];
+                    var x = "S" + cont + "-" + aux6[1][2]; //AQUI
 
                     if (idTra2[n] === j) {
                         arrayDestino2.push("S" + cont);
-
                     } else {
                         if (idTra2[n] === r) {
                             arrayDestino2.push("S" + cont);
+                        } else {
+                            if (idTra2[n] === x) { //AQUI
+                                arrayDestino2.push("S" + cont);
+                            }
                         }
-
                     }
-
                 }
 
                 for (let g = 0; g < idTra2.length; g++) {
@@ -1666,24 +1872,24 @@
                 output1.style.className = "mb-4";
                 output2.textContent = (`AFND a AFD Automata 1`);
                 output2.style.className = "py-3";
-                output3.textContent = (`El conjunto del automata 1 :  [${conjuntoAFND}]`);
+                output3.textContent = (`El conjunto = [${conjuntoAFND}]`);
                 output3.style.className = "ml-3";
-                output4.textContent = (`El estado inicial del automata 1:  [${entrada1}]`);
+                output4.textContent = (`El estado inicial = [${entrada1}]`);
                 output4.style.className = "ml-3";
-                output5.textContent = (`Los estados finales del automata 1 :  [${salida1}]`);
+                output5.textContent = (`Los estados finales =  [${salida1}]`);
                 output5.style.className = "ml-3";
-                output6.textContent = (`El lenguaje del automata 1 :  [${lenguaje1}]`);
+                output6.textContent = (`El lenguaje =  [${lenguaje1}]`);
                 output6.style.className = "ml-3";
-                output7.textContent = (`Las transiciones del automata 1:  [${array1}]`);
+                output7.textContent = (`Las transiciones =  [${array1}]`);
                 output7.style.className = "ml-3";
                 //Automata 2//
                 output8.textContent = (`AFND a AFD del Automata 2`);
                 output8.style.className = "py-3";
-                output9.textContent = (`El conjunto del automata 2:  [${conjuntoAFND2}]`);
-                output10.textContent = (`El estado inicial del automata 2:  [${entrada2}]`);
-                output11.textContent = (`Los estados finales del automata 2:  [${salida2}]`);
-                output12.textContent = (`El lenguaje del automata 2:  [${lenguaje2}]`);
-                output13.textContent = (`Las transiciones del automata 2:  [${array2}]`);
+                output9.textContent = (`El conjunto =  [${conjuntoAFND2}]`);
+                output10.textContent = (`El estado inicial =  [${entrada2}]`);
+                output11.textContent = (`Los estados finales =  [${salida2}]`);
+                output12.textContent = (`El lenguaje = [${lenguaje2}]`);
+                output13.textContent = (`Las transiciones = [${array2}]`);
                 var nuevoArreglo = [];
 
                 var conjuntoNuevo = [];
@@ -1692,12 +1898,10 @@
                 for (let h = 0; h < conjuntoNuevo.length; h++) {
                     var nue = new String(conjuntoNuevo[h]);
                     nue.split("-", 1);
-                    console.log("Aca se muestra ctmmmmm", nue);
                     nuevoArreglo.push(nue);
 
                     console.log(nue);
                 }
-                console.log("Aca deberia mostrarlooooo");
                 console.log("nuevo arreglo", nuevoArreglo);
 
                 var arregloAux = [];
@@ -1713,32 +1917,21 @@
 
                 console.log(arregloAux);
 
-                /* obtener el valor de conjunto por separado
-                    
-                */
-
             }
+
         } else if (TipoAutomata === 'AFD/AFND') {
             // automata 2//0
-
             const tablaTransicion3 = document.querySelector("#tablaTransicion4");
-
 
             for (let v = 0; v < transicion2.length; v++) {
                 if (transicion2[v] === "@") {
                     conjunto2.push("S" + count);
                     arrayDestino2.push("S" + count);
 
-
-
                 } else {
                     arrayDestino2.push(transicion2[v]);
-
                 }
-
             }
-
-
             console.log(conjunto2);
 
             var conjuntoAFND2 = conjunto2.unique();
@@ -1747,7 +1940,7 @@
             console.log(arrayDestino2);
 
 
-
+            var aux = llenarLEN();
             var idTra2 = TablaTransicionVacia(conjuntoAFND2, aux[1], tablaTransicion3);
 
             var array2 = [];
@@ -1759,6 +1952,7 @@
             for (let n = 0; n < idTra2.length; n++) {
                 var j = "S" + cont + "-" + aux6[1][0];
                 var r = "S" + cont + "-" + aux6[1][1];
+                var x
 
                 if (idTra2[n] === j) {
                     arrayDestino2.push("S" + cont);
@@ -1778,8 +1972,6 @@
             }
             console.log(array2);
 
-
-
             const output1 = document.querySelector("#mensajeGeneral");
             const output2 = document.querySelector("#mensajeConvertido");
             const output3 = document.querySelector("#conjuntoConvertido"); //conjunto a1
@@ -1794,43 +1986,18 @@
             const output12 = document.querySelector("#lenguajeConvertido1"); // lenguaje
             const output13 = document.querySelector("#transicionConvertido1"); // transicion
 
-
             output1.textContent = (`Se convierten los automatas AFND a AFD`);
-            output1.style.className = "mb-4";
-            output2.textContent = (`AFND a AFD Automata 1`);
-            output2.style.className = "py-3";
-            output3.textContent = (`El conjunto del automata 1 :  [${conjuntoAFND}]`);
-            output3.style.className = "ml-3";
-            output4.textContent = (`El estado inicial del automata 1:  [${entrada1}]`);
-            output4.style.className = "ml-3";
-            output5.textContent = (`Los estados finales del automata 1 :  [${salida1}]`);
-            output5.style.className = "ml-3";
-            output6.textContent = (`El lenguaje del automata 1 :  [${lenguaje1}]`);
-            output6.style.className = "ml-3";
-            output7.textContent = (`Las transiciones del automata 1:  [${array1}]`);
-            output7.style.className = "ml-3";
+            output1.style.className = "my-4 text-center";
+            output2.textContent = "Ups detectamos que el Automata 1 ya es AFD :D !!";
+            output2.style.className = "pb-3";
             //Automata 2//
             output8.textContent = (`AFND a AFD del Automata 2`);
             output8.style.className = "py-3";
-            output9.textContent = (`El conjunto del automata 2:  [${conjuntoAFND2}]`);
-            output10.textContent = (`El estado inicial del automata 2:  [${entrada2}]`);
-            output11.textContent = (`Los estados finales del automata 2:  [${salida2}]`);
-            output12.textContent = (`El lenguaje del automata 2:  [${lenguaje2}]`);
-            output13.textContent = (`Las transiciones del automata 2:  [${array2}]`);
+            output9.textContent = (`El conjunto =  [${conjuntoAFND2}]`);
+            output10.textContent = (`El estado inicial =  [${entrada2}]`);
+            output11.textContent = (`Los estados finales =  [${salida2}]`);
+            output12.textContent = (`El lenguaje =  [${lenguaje2}]`);
+            output13.textContent = (`Las transiciones =  [${array2}]`);
 
-
-            //var nuevoArreglo = [];
-
-            //var conjuntoNuevo = array1;
-
-            //for (let h = 0; h < conjuntoAFND.length; h++) {
-            //var nue = conjuntoNuevo[h];
-
-            //nue.split("-");
-            //nuevoArreglo.push(nue);
-            // }
-            // console.log("Aca deberia mostrarlooooo");
-            // console.log("nuevo arreglo", nuevoArreglo);
         }
-
     }
