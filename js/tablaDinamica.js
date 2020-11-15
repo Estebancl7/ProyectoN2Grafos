@@ -1015,11 +1015,11 @@
         output2.className = "mb-2 ml-3";
         output3.textContent = (`El estado inicial viene dado por =  [${entrada1}]`);
         output3.className = "mb-2 ml-3";
-        output4.textContent = (`Las salida de concatenacion del automata 1 es =  [${salida1}]`);
+        output4.textContent = (`Las salidas de simplificacion del automata 1 es =  [${salida1}]`);
         output4.className = "mb-2 ml-3";
         output5.textContent = (`El alfabeto asociado es =  [${arrayResultado[1]}]:`);
         output5.className = "mb-2 ml-3";
-        output6.textContent = (`La transicion de concatenacion es =  [${transicionFinal}]:`);
+        output6.textContent = (`La transicion de simplificacion es =  [${transicionFinal}]:`);
         output6.className = "mb-2 ml-3";
         return arrayResultado;
     }
@@ -1118,11 +1118,11 @@
         output2.className = "mb-2 ml-3";
         output3.textContent = (`El estado inicial viene dado por =  [${entrada2}]`);
         output3.className = "mb-2 ml-3";
-        output4.textContent = (`Las salida de concatenacion del automata 1 es =  [${salida2}]`);
+        output4.textContent = (`Las salidas de simplificacion del automata 1 es =  [${salida2}]`);
         output4.className = "mb-2 ml-3";
         output5.textContent = (`El alfabeto asociado es =  [${arrayResultado[1]}]:`);
         output5.className = "mb-2 ml-3";
-        output6.textContent = (`La transicion de concatenacion es =  [${transicionFinal[2]}]:`);
+        output6.textContent = (`La transicion de simplificacion es =  [${transicionFinal[2]}]:`);
         output6.className = "mb-2 ml-3";
         return arrayResultado;
     }
@@ -1417,12 +1417,15 @@
             aux18 = [],
             aux19 = [],
             aux20 = [];
+        var Conju = llenar()[0];
+        var Conju2 = llenar()[1];
         var Entra = llenar()[2];
         var Sale = llenar()[3];
         var Entra2 = llenar()[4];
         var Sale2 = llenar()[5];
         var arrayEinter = [];
         var arraySinter = [];
+        var arrayCinter = [];
         for (let t = 0; t < lengua1.length; t++) {
             if (lengua1[t] !== lengua2[t]) {
                 confirma = false;
@@ -1535,15 +1538,41 @@
                 arrayEinter.push(Entra[y].concat(Entra2[q]));
             }
         }
+        for (let p = 0; p < Sale.length; p++) {
+            for (let l = 0; l < Sale2.length; l++) {
+                arraySinter.push(Sale[p].concat(Sale2[l]));
+            }
+        }
+
+        for (let f = 0; f < Conju.length; f++) {
+            for (let r = 0; r < Conju2.length; r++) {
+                arrayCinter.push(Conju[f].concat(Conju2[r]));
+            }
+        }
+
+        var lenguajeInter = llenarLEN()[0];
         console.log("Este es el Arreglo de Transicion Final :", transicionFinal);
         const output1 = document.querySelector("#mensajeInter");
-        const output3 = document.querySelector("#conjuntoInter");
-        const output4 = document.querySelector("#entradaInter");
-        const output5 = document.querySelector("#salidaInter");
-        const output6 = document.querySelector("#lenguajeInter");
-        const output7 = document.querySelector("#transicionInter");
+        const output2 = document.querySelector("#conjuntoInter");
+        const output3 = document.querySelector("#entradaInter");
+        const output4 = document.querySelector("#salidaInter");
+        const output5 = document.querySelector("#lenguajeInter");
+        const output6 = document.querySelector("#transicionInter");
 
-        output7.textContent = (`Las transicion viene dada por:  [${transicionFinal}]`);
+        output1.textContent = (`El Automata transformado a AFD viene dado por: `);
+        output1.className = "my-4 ml-3 text-center";
+        output2.textContent = (`El conjunto viene dado por =  [${arrayCinter}]:`);
+        output2.className = "mb-2 ml-3";
+        output3.textContent = (`El estado inicial viene dado por =  [${arrayEinter}]`);
+        output3.className = "mb-2 ml-3";
+        output4.textContent = (`Las salidas de intersecion son =  [${arraySinter}]`);
+        output4.className = "mb-2 ml-3";
+        output5.textContent = (`El alfabeto asociado es =  [${lenguajeInter}]`);
+        output5.className = "mb-2 ml-3";
+        output6.textContent = (`La transicion de la intersecion son =  [${transicionFinal}]:`);
+        output6.className = "mb-2 ml-3";
+
+
 
         return transicionFinal;
     }
@@ -1769,7 +1798,6 @@
 
             var conjuntoAFND2 = conjunto2.unique();
             console.log("Conjunto Automata N°2 :", conjuntoAFND2);
-
             var aux = llenarLEN();
             var idTra2 = TablaTransicionVacia(conjuntoAFND2, aux[1], tablaTransicion3);
             var array2 = [];
@@ -1782,10 +1810,8 @@
                 var h = "S" + cont + "-" + aux6[1][3];
                 var v = "S" + cont + "-" + aux6[1][4];
 
-
                 if (idTra2[n] === j) {
                     arrayDestino2.push("S" + cont);
-
                 } else {
                     if (idTra2[n] === r) {
                         arrayDestino2.push("S" + cont);
@@ -1802,9 +1828,7 @@
                             }
                         }
                     }
-
                 }
-
             }
 
             for (let g = 0; g < idTra2.length; g++) {
