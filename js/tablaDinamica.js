@@ -16,11 +16,8 @@
 
     function addFormulario() {
         let a = 1;
-        let cont = 0;
         let numero = document.getElementById("Automata1").value;
         let numero2 = document.getElementById("Automata2").value;
-        var aux1 = [];
-        var aux2 = [];
         let count1 = 1;
         const texto1 = document.querySelector("#formulario");
         texto1.textContent = "Nombres para el automata 1";
@@ -114,7 +111,7 @@
             const texto2 = document.querySelector("#formulario2");
             texto2.textContent = "Nombres para el automata 2";
             texto2.className = "alert alert-warning py-4 mx-2";
-            count2 = 1;
+            let count2 = 1;
             let b = 1;
 
             while (b <= numero2) {
@@ -187,7 +184,7 @@
             const texto2 = document.querySelector("#formulario2");
             texto2.textContent = "Nombres para el automata 2";
             texto2.className = "alert alert-warning py-4 mx-2";
-            count2 = 1;
+            let count2 = 1;
             let b = 1;
 
             while (b <= numero2) {
@@ -337,7 +334,6 @@
     const tablaTransicion2 = document.querySelector("#tablaTransicion2");
 
     function TablaTransicion(arrayConjunto, arraylenguaje, tablaTransicion1) {
-        var count4 = 0;
         var arrayTra = [];
         var tablaPadre = document.createElement('table'),
             filaTitulo = document.createElement('tr');
@@ -377,7 +373,6 @@
                 input.setAttribute('type', 'text');
                 input.id = `${arrayConjunto[i]}-${arraylenguaje[j]}`;
                 arrayTra.push(input.id);
-                count4++;
                 colInput.appendChild(input);
                 filaDatos.appendChild(colEstados);
                 filaDatos.appendChild(collenguaje);
@@ -416,7 +411,6 @@
         var aux = llenar()[0];
         var len = llenarLEN()[0];
         var arrayTransiciones = [];
-        let cont = 0;
 
         for (let i = 0; i < aux.length; i++) {
             for (let j = 0; j < len.length; j++) {
@@ -433,7 +427,6 @@
         var aux = llenar()[1];
         var len = llenarLEN()[1];
         var arrayTransiciones = [];
-        cont = 0;
 
         for (let i = 0; i < aux.length; i++) {
             for (let j = 0; j < len.length; j++) {
@@ -483,7 +476,6 @@
     }
 
     function TablaTransicionVacia(arrayConjunto, arraylenguaje, tablaTransicion1) {
-        var count4 = 0;
         var arrayTra = [];
         var tablaPadre = document.createElement('table'),
             filaTitulo = document.createElement('tr');
@@ -507,7 +499,7 @@
                     colEstados = document.createElement('td'),
                     collenguaje = document.createElement('td'),
                     colInput = document.createElement('td');
-                input = document.createElement('input')
+                var input = document.createElement('input');
                 filaDatos.style.width = "100px";
                 filaDatos.style.height = "30px";
                 filaDatos.style.backgroundColor = "#cda4345b";
@@ -523,7 +515,6 @@
                 input.setAttribute('type', 'text');
                 input.id = `${arrayConjunto[i]}-${arraylenguaje[j]}`;
                 arrayTra.push(input.id);
-                count4++;
             }
 
         }
@@ -1043,7 +1034,7 @@
             aux6 = [];
         Conjunto1.sort();
         for (let i = 0; i < Conjunto1.length; i++) {
-            aux = Conjunto1[i];
+            var aux = Conjunto1[i];
             if (Conjunto1[i] === Transicion1[i]) {
                 if (rescatado !== aux) {
                     aux1 = Conjunto1[i];
@@ -1103,8 +1094,8 @@
             transicionFinal.push(final);
         }
 
-        entrada2 = llenar()[4];
-        salida2 = llenar()[5];
+        var entrada2 = llenar()[4];
+        var salida2 = llenar()[5];
 
         const output1 = document.querySelector("#mensajeSimpli1");
         const output2 = document.querySelector("#conjuntoSimpli1");
@@ -1234,7 +1225,7 @@
         var traCon = transicionCompleta()[3];
         var idCon2 = transicionCompleta()[4];
         var traCon2 = transicionCompleta()[5];
-        let count = 1;
+        var count = 1;
 
         for (let i = 0; i < lenguajeFun.length; i++) {
             var validador = lenguajeFun[i];
@@ -1319,7 +1310,7 @@
         var traCon = transicionCompleta()[3];
         var idCon2 = transicionCompleta()[4];
         var traCon2 = transicionCompleta()[5];
-        count = 1;
+        let count = 1;
 
         for (let i = 0; i < lenguajeFun.length; i++) {
             var validador = lenguajeFun[i];
@@ -2071,11 +2062,8 @@
         arrayResultado.push(aux5);
         arrayResultado.push(aux6);
         var entrada1 = llenar()[2];
-        var entrada2 = llenar()[4];
         var salida1 = llenar()[3];
-        var salida2 = llenar()[5];
         var lenguaje1 = llenarLEN()[0];
-        var lenguaje2 = llenarLEN()[1];
         var transicionFinal = [];
 
         for (let l = 0; l < aux4.length; l++) {
@@ -2118,7 +2106,7 @@
         if (eltipo == 'AFD') {
             const output2 = document.querySelector("#mensajeConvertido");
             output2.textContent = "Ups detectamos que el Automata 1 y 2 ya es AFD :D !!";
-            output2.style.className = "pb-5 text-center"
+            output2.style.className = "pb-5 ml-5 text-center"
 
         } else if (eltipo == 'AFND') {
             simplificarAFND_AFD(Conjunto1, lenguaje1, Transicion1);
