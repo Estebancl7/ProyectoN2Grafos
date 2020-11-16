@@ -65,12 +65,12 @@
                         <div class="row">
                             <div class="col-md-9">
                                 <div class="form-group">
-                                    <input class="form-control" type="number" id="Automata1" placeholder="Ingrese N&deg de estados para el aut&oacutemata N&deg1" required>
+                                    <input class="form-control" type="number" id="Automata1" placeholder="Ingrese N&deg de estados para el automata 1" required>
                                 </div>
                             </div>
                             <div class="col-md-9">
                                 <div class="form-group" >
-                                    <input class="form-control" type="number" id="Automata2" placeholder="Ingrese N&deg de estados para el aut&oacutemata N&deg2" required>     
+                                    <input class="form-control" type="number" id="Automata2" placeholder="Ingrese N&deg de estados para el automata 2" required>     
                                 </div>
                             </div>
                         </div>
@@ -83,14 +83,7 @@
                                 <div class="form-group">
                                     <input class="form-control" type="number" id="nEntradas" placeholder="N&deg de variables del lenguaje para el automata 1" required>
                                     <input class="form-control mt-1" type="number" id="nEntradas2" placeholder="N&deg de variables del lenguaje para el automata 2" required>
-                                </div>
-
-                                <div>
-                                <!--<a onclick="agregarLEN()"class="btn btn-outline-light px-2 mb-3" style="text-align: center; max-width: 850px;">Aceptar lenguaje </a>-->
-                                </div>
-
-                                
-                                
+                                </div> 
                             </div>
                         </div>
                         
@@ -203,7 +196,7 @@
                             <div id="lenguajeUnionAFD" class=""></div>
                             <div id="transicionUnionAFD" class=""></div>
                         
-                        <!--<a onclick="convertirAFNDtoAFD()" class="btn btn-outline-light mt-4 marginbtn mb-3">Transformar a AFD!</a>-->
+                    
                         </div>
 
                     </div>
@@ -212,7 +205,7 @@
                         
                         <h3 class="text-center mt-2">Simplificar</h3>
                         <h1 class="dividerGr"></h1>
-                        <a onclick="imprimirSim()" class="btn btn-outline-light mt-4 marginbtn mb-3">Haz click para ver!</a>
+                        <a onclick="imprimirSimplificar()" class="btn btn-outline-light mt-4 marginbtn mb-3">Haz click para ver!</a>
                         <div id="rowUnion2" class="row">
                             <div>
                                 <div id="mensajeSimpli" class=""></div>
@@ -233,7 +226,7 @@
                                 <div id="lenguajeSimpli1" class=""></div>
                                 <div id="transicionSimpli1" class=""></div>
                             </div>
-                            <!--<div id="simplificar" class="pt-4 pb-2"></div>-->
+                            
                             
 
                         </div>
@@ -277,7 +270,7 @@
                     <div class="col-9  my-2 mt-5">
                         <h3 class="text-center mt-2">Pasar de AFND a AFD</h3>
                         <h1 class="dividerGr"></h1>
-                        <a onclick="convertirAFNDtoAFD()" class="btn btn-outline-light mt-4 marginbtn1 mb-3">Haz click para ver!</a>
+                        <a onclick="Imprimir_AFND_AFD()" class="btn btn-outline-light mt-4 marginbtn1 mb-3">Haz click para ver!</a>
                         <div id="rowUnion" class="row text-left ml-3 justify-content-center">
                             <div id="bordes2" class="col-12 ml-3 mb-4">
                                 <div id="mensajeGeneral"></div>
@@ -296,11 +289,27 @@
                                 <div id="lenguajeConvertido1" class=""></div>
                                 <div id="transicionConvertido1" class=""></div>    
                             </div>
+                            <div class="col-12 ml-3 mb-4">
+                                <div id="mensajeAFNDSimpli" class=""></div>
+                                <div id="conjuntoAFNDSimpli" class=""></div>
+                                <div id="entradaAFNDSimpli" class=""></div>
+                                <div id="salidaAFNDSimpli" class=""></div>
+                                <div id="lenguajeAFNDSimpli" class=""></div>
+                                <div id="transicionAFNDSimpli" class=""></div>    
+                            </div>
+                            <div class="col-12 ml-3 mb-4">
+                                <div id="mensajeAFNDSimpli2" class=""></div>
+                                <div id="conjuntoAFNDSimpli2" class=""></div>
+                                <div id="entradaAFNDSimpli2" class=""></div>
+                                <div id="salidaAFNDSimpli2" class=""></div>
+                                <div id="lenguajeAFNDSimpli2" class=""></div>
+                                <div id="transicionAFNDSimpli2" class=""></div>    
+                            </div>
                         </div>
                     </div>
                 </div>
 
-        <!--</div>-->
+        
 
     </div>
 
